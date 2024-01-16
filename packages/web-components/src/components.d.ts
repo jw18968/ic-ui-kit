@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
+import { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcDateFormat, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail, IcWeekDays } from "./utils/types";
 import { IcBadgePositions, IcBadgeTypes, IcBadgeVariants, IcColor } from "./components/ic-badge/ic-badge.types";
 import { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 import { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
@@ -31,7 +31,7 @@ import { IcSwitchChangeEventDetail } from "./components/ic-switch/ic-switch.type
 import { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-tab/ic-tab.types";
 import { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 import { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
-export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
+export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcDateFormat, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail, IcWeekDays } from "./utils/types";
 export { IcBadgePositions, IcBadgeTypes, IcBadgeVariants, IcColor } from "./components/ic-badge/ic-badge.types";
 export { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 export { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
@@ -573,6 +573,96 @@ export namespace Components {
          */
         "value": string;
     }
+    interface IcDateInput {
+        /**
+          * The format in which the date will be displayed.
+         */
+        "dateFormat"?: IcDateFormat;
+        /**
+          * The days of the week to disable.
+         */
+        "disableDays"?: IcWeekDays[];
+        /**
+          * The text to display as the validation message when `disableDays` is set and a disabled date is entered.
+         */
+        "disableDaysMessage"?: string;
+        /**
+          * If `true`, dates in the future are not allowed. A validation message will appear if a date in the future is entered.
+         */
+        "disableFuture"?: boolean;
+        /**
+          * The text to display as the validation message when `disableFuture` is true and a date in the future is entered.
+         */
+        "disableFutureMessage"?: string;
+        /**
+          * If `true`, dates in the past are not allowed. A validation message will appear if a date in the past is entered.
+         */
+        "disablePast"?: boolean;
+        /**
+          * The text to display as the validation message when `disablePast` is true and a date in the past is entered.
+         */
+        "disablePastMessage"?: string;
+        /**
+          * If `true`, the disabled state will be set.
+         */
+        "disabled"?: boolean;
+        /**
+          * Returns the value as a Date object
+          * @returns Date
+         */
+        "getDate": () => Promise<Date>;
+        /**
+          * The helper text that will be displayed for additional field guidance. This will default to the text "Use format" along with the `dateFormat` value.
+         */
+        "helperText"?: string;
+        /**
+          * The ID for the input.
+         */
+        "inputId"?: string;
+        /**
+          * The label for the date input.
+         */
+        "label": string;
+        /**
+          * The latest date that will be allowed. The value can be in any format supported as `dateFormat`, in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object. The value of this prop is ignored if `disableFuture` is set to `true`.
+         */
+        "max"?: string | Date;
+        /**
+          * The earliest date that will be allowed. The value can be in any format supported as `dateFormat`, in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object. The value of this prop is ignored if `disablePast` is set to `true`.
+         */
+        "min"?: string | Date;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * If `true`, the input will require a value.
+         */
+        "required"?: boolean;
+        "setCalendarFocus": () => Promise<void>;
+        "setDisableDays": (days: IcWeekDays[]) => Promise<void>;
+        "showCalendarButton"?: boolean;
+        /**
+          * If `true`, a button which clears the date input when clicked will be displayed.
+         */
+        "showClearButton"?: boolean;
+        /**
+          * The size of the date input to be displayed.
+         */
+        "size"?: IcSizes;
+        /**
+          * The validation status - e.g. 'error' | 'warning' | 'success'. This will override the built-in date validation.
+         */
+        "validationStatus"?: IcInformationStatusOrEmpty;
+        /**
+          * The text to display as the validation message. This will override the built-in date validation.
+         */
+        "validationText"?: string;
+        /**
+          * The value of the date input. The value can be in any format supported as `dateFormat`, in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object.
+         */
+        "value"?: string | Date;
+    }
     interface IcDialog {
         /**
           * @deprecated This prop should not be used anymore. Use an ic-alert/IcAlert component within an alert slot with a heading instead.
@@ -811,7 +901,7 @@ export namespace Components {
         /**
           * The size of the input component container component.
          */
-        "size"?: IcSizesNoLarge;
+        "size"?: IcSizes;
         /**
           * @deprecated This prop should not be used anymore. Set prop `size` to "small" instead.
          */
@@ -2264,6 +2354,10 @@ export interface IcChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcChipElement;
 }
+export interface IcDateInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcDateInputElement;
+}
 export interface IcDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcDialogElement;
@@ -2508,6 +2602,26 @@ declare global {
     var HTMLIcDataRowElement: {
         prototype: HTMLIcDataRowElement;
         new (): HTMLIcDataRowElement;
+    };
+    interface HTMLIcDateInputElementEventMap {
+        "calendarButtonClicked": { value: Date };
+        "icBlur": { value: Date };
+        "icChange": { value: Date };
+        "icFocus": { value: Date };
+    }
+    interface HTMLIcDateInputElement extends Components.IcDateInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIcDateInputElementEventMap>(type: K, listener: (this: HTMLIcDateInputElement, ev: IcDateInputCustomEvent<HTMLIcDateInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIcDateInputElementEventMap>(type: K, listener: (this: HTMLIcDateInputElement, ev: IcDateInputCustomEvent<HTMLIcDateInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIcDateInputElement: {
+        prototype: HTMLIcDateInputElement;
+        new (): HTMLIcDateInputElement;
     };
     interface HTMLIcDialogElementEventMap {
         "icDialogCancelled": void;
@@ -3089,6 +3203,7 @@ declare global {
         "ic-classification-banner": HTMLIcClassificationBannerElement;
         "ic-data-entity": HTMLIcDataEntityElement;
         "ic-data-row": HTMLIcDataRowElement;
+        "ic-date-input": HTMLIcDateInputElement;
         "ic-dialog": HTMLIcDialogElement;
         "ic-divider": HTMLIcDividerElement;
         "ic-empty-state": HTMLIcEmptyStateElement;
@@ -3659,6 +3774,102 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface IcDateInput {
+        /**
+          * The format in which the date will be displayed.
+         */
+        "dateFormat"?: IcDateFormat;
+        /**
+          * The days of the week to disable.
+         */
+        "disableDays"?: IcWeekDays[];
+        /**
+          * The text to display as the validation message when `disableDays` is set and a disabled date is entered.
+         */
+        "disableDaysMessage"?: string;
+        /**
+          * If `true`, dates in the future are not allowed. A validation message will appear if a date in the future is entered.
+         */
+        "disableFuture"?: boolean;
+        /**
+          * The text to display as the validation message when `disableFuture` is true and a date in the future is entered.
+         */
+        "disableFutureMessage"?: string;
+        /**
+          * If `true`, dates in the past are not allowed. A validation message will appear if a date in the past is entered.
+         */
+        "disablePast"?: boolean;
+        /**
+          * The text to display as the validation message when `disablePast` is true and a date in the past is entered.
+         */
+        "disablePastMessage"?: string;
+        /**
+          * If `true`, the disabled state will be set.
+         */
+        "disabled"?: boolean;
+        /**
+          * The helper text that will be displayed for additional field guidance. This will default to the text "Use format" along with the `dateFormat` value.
+         */
+        "helperText"?: string;
+        /**
+          * The ID for the input.
+         */
+        "inputId"?: string;
+        /**
+          * The label for the date input.
+         */
+        "label": string;
+        /**
+          * The latest date that will be allowed. The value can be in any format supported as `dateFormat`, in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object. The value of this prop is ignored if `disableFuture` is set to `true`.
+         */
+        "max"?: string | Date;
+        /**
+          * The earliest date that will be allowed. The value can be in any format supported as `dateFormat`, in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object. The value of this prop is ignored if `disablePast` is set to `true`.
+         */
+        "min"?: string | Date;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        "onCalendarButtonClicked"?: (event: IcDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onIcBlur"?: (event: IcDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onIcChange"?: (event: IcDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * Emitted when the input gains focus.
+         */
+        "onIcFocus"?: (event: IcDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * If `true`, the input will require a value.
+         */
+        "required"?: boolean;
+        "showCalendarButton"?: boolean;
+        /**
+          * If `true`, a button which clears the date input when clicked will be displayed.
+         */
+        "showClearButton"?: boolean;
+        /**
+          * The size of the date input to be displayed.
+         */
+        "size"?: IcSizes;
+        /**
+          * The validation status - e.g. 'error' | 'warning' | 'success'. This will override the built-in date validation.
+         */
+        "validationStatus"?: IcInformationStatusOrEmpty;
+        /**
+          * The text to display as the validation message. This will override the built-in date validation.
+         */
+        "validationText"?: string;
+        /**
+          * The value of the date input. The value can be in any format supported as `dateFormat`, in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object.
+         */
+        "value"?: string | Date;
+    }
     interface IcDialog {
         /**
           * @deprecated This prop should not be used anymore. Use an ic-alert/IcAlert component within an alert slot with a heading instead.
@@ -3897,7 +4108,7 @@ declare namespace LocalJSX {
         /**
           * The size of the input component container component.
          */
-        "size"?: IcSizesNoLarge;
+        "size"?: IcSizes;
         /**
           * @deprecated This prop should not be used anymore. Set prop `size` to "small" instead.
          */
@@ -5445,6 +5656,7 @@ declare namespace LocalJSX {
         "ic-classification-banner": IcClassificationBanner;
         "ic-data-entity": IcDataEntity;
         "ic-data-row": IcDataRow;
+        "ic-date-input": IcDateInput;
         "ic-dialog": IcDialog;
         "ic-divider": IcDivider;
         "ic-empty-state": IcEmptyState;
@@ -5513,6 +5725,7 @@ declare module "@stencil/core" {
             "ic-classification-banner": LocalJSX.IcClassificationBanner & JSXBase.HTMLAttributes<HTMLIcClassificationBannerElement>;
             "ic-data-entity": LocalJSX.IcDataEntity & JSXBase.HTMLAttributes<HTMLIcDataEntityElement>;
             "ic-data-row": LocalJSX.IcDataRow & JSXBase.HTMLAttributes<HTMLIcDataRowElement>;
+            "ic-date-input": LocalJSX.IcDateInput & JSXBase.HTMLAttributes<HTMLIcDateInputElement>;
             "ic-dialog": LocalJSX.IcDialog & JSXBase.HTMLAttributes<HTMLIcDialogElement>;
             "ic-divider": LocalJSX.IcDivider & JSXBase.HTMLAttributes<HTMLIcDividerElement>;
             "ic-empty-state": LocalJSX.IcEmptyState & JSXBase.HTMLAttributes<HTMLIcEmptyStateElement>;

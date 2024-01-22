@@ -29,6 +29,8 @@ export const config: Config = {
         'ic-classification-banner',
         'ic-data-entity',
         'ic-data-row',
+        'ic-date-input',
+        'ic-date-picker',
         'ic-dialog',
         'ic-divider',
         'ic-empty-state',

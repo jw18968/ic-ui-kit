@@ -627,7 +627,7 @@ export class Select {
   // to prevent delay in change event, which should only occur when typing in input
   private handleMenuKeyPress = (ev: CustomEvent): void => {
     ev.cancelBubble = true;
-    this.handleCharacterKeyDown(ev.detail.key);
+    this.handleCharacterKeyDown(ev.detail.key, ev.detail.disabledOption);
   };
 
   private handleMenuValueChange = (ev: CustomEvent): void => {
@@ -700,14 +700,15 @@ export class Select {
     }
   };
 
-  private handleCharacterKeyDown = (key: string) => {
+  private handleCharacterKeyDown = (key: string, onDisabledOption: boolean) => {
     // Only close menu when space is pressed if not being used alongside character keys to quickly select options
     if (
       this.open &&
       key === " " &&
       this.pressedCharacters.length === 0 &&
       !this.hasTimedOut &&
-      !this.loading
+      !this.loading && 
+      !onDisabledOption
     ) {
       this.setMenuChange(false);
     }
@@ -734,7 +735,7 @@ export class Select {
     if ((event.key !== "Escape" && event.key !== "Tab") || this.open) {
       event.cancelBubble = true;
     }
-    this.handleCharacterKeyDown(event.key);
+    this.handleCharacterKeyDown(event.key, false);
   };
 
   private handleKeyDown = (event: KeyboardEvent): void => {
@@ -762,7 +763,7 @@ export class Select {
           // Keyboard events get passed onto ic-menu
           this.menu.handleKeyboardOpen(event);
         }
-        this.handleCharacterKeyDown(event.key);
+        this.handleCharacterKeyDown(event.key, false);
       }
     }
   };

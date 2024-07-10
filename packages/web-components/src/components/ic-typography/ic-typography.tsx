@@ -1,4 +1,15 @@
-import { Component, Prop, h, Element, Host, State, Watch } from "@stencil/core";
+import {
+  Component,
+  Prop,
+  h,
+  Element,
+  Host,
+  State,
+  Watch,
+  Method,
+  Event,
+  EventEmitter,
+} from "@stencil/core";
 
 import { IcTypographyVariants } from "../../utils/types";
 import { checkResizeObserver } from "../../utils/helpers";
@@ -42,7 +53,7 @@ export class Typography {
   /**
    * The number of lines to display before truncating the text, only used for the 'body' variant.
    */
-  @Prop() maxLines?: number;
+  @Prop({ mutable: true }) maxLines?: number;
 
   /**
    * If `true`, the typography will have a line through it.
@@ -59,6 +70,14 @@ export class Typography {
    */
   @Prop() variant?: IcTypographyVariants = "body";
 
+  /**
+   * @internal Emits and event when the typography truncation button has been clicked.
+   */
+  @Event() typographyTruncationExpandToggle: EventEmitter<{
+    expanded: boolean;
+    typographyEl: HTMLIcTypographyElement;
+  }>;
+
   @State() expanded: boolean = false;
 
   @Watch("expanded")
@@ -72,6 +91,19 @@ export class Typography {
   disconnectedCallback(): void {
     if (this.resizeObserver !== null) {
       this.resizeObserver.disconnect();
+    }
+  }
+  /**
+   * @internal This is used by data table to remove all truncation in certain events
+   */
+  @Method()
+  async resetTruncation() {
+    if (this.truncated) {
+      this.truncated = false;
+      this.maxLines = 0;
+      this.el.removeAttribute("max-lines");
+      this.expanded = false;
+      this.el.removeAttribute("style");
     }
   }
 
@@ -92,11 +124,23 @@ export class Typography {
     }
   }
 
-  private toggleExpanded = () => {
+  private toggleExpanded = (ev: Event) => {
+    ev.stopPropagation();
+
     this.expanded = !this.expanded;
+    this.typographyTruncationExpandToggle.emit({
+      expanded: this.expanded,
+      typographyEl: this.el,
+    });
   };
 
-  private checkMaxLines = (height: number) => {
+  /**
+   * @internal This checks if the number of lines of text exceeds the maxLines prop. If so, set the line clamp CSS to the max lines
+   * @param height - text container height
+   */
+
+  @Method()
+  async checkMaxLines(height: number) {
     //24 is the height of a single line
     const numLines = Math.floor(height / 24);
     if (numLines > this.maxLines) {
@@ -104,7 +148,15 @@ export class Typography {
       this.truncatedHeight = this.el.clientHeight;
       this.truncated = true;
     }
-  };
+  }
+
+  /**
+   * @internal This method makes it possible to set the expanded status of trucated text outside of ic-typography component
+   */
+  @Method()
+  async setShowHideExpanded(expanded: boolean) {
+    this.expanded = expanded;
+  }
 
   private checkMarkerPosition = (elTop: number, markerTop: number) => {
     if (markerTop - elTop < this.truncatedHeight) {

@@ -148,6 +148,10 @@ export namespace Components {
          */
         "stickyRowHeaders"?: boolean;
         /**
+          * Sets the table width.
+         */
+        "tableWidth"?: string;
+        /**
           * Sets the method used to truncate longer text in cells where textWrap is `false`. The `tooltip` truncation pattern allows the overflowing text to be seen in a tooltip. The `showHide` truncation pattern allows the overflowing text to be shown and hidden using the ic-typography "See more"/"See less" buttons.
          */
         "truncationPattern"?: IcDataTableTruncationTypes;
@@ -960,6 +964,10 @@ declare namespace LocalJSX {
           * If `true`, row headers will remain to the left when scrolling horizontally.
          */
         "stickyRowHeaders"?: boolean;
+        /**
+          * Sets the table width.
+         */
+        "tableWidth"?: string;
         /**
           * Sets the method used to truncate longer text in cells where textWrap is `false`. The `tooltip` truncation pattern allows the overflowing text to be seen in a tooltip. The `showHide` truncation pattern allows the overflowing text to be shown and hidden using the ic-typography "See more"/"See less" buttons.
          */

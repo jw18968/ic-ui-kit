@@ -30,6 +30,7 @@ import {
   TruncationShowHide,
   TruncationTextWrap,
   TruncationTooltip,
+  ColumnWidth,
   CustomTitleBar,
   UpdatingData,
   SlottedPagination,
@@ -1524,6 +1525,17 @@ const data = [
 </script>
 ```
 
+### Column Width
+
+<Canvas withSource="none">
+  <Story
+    name="Column Width"
+    parameters={{ loki: { skip: true } }}
+  >
+    {ColumnWidth()}
+  </Story>
+</Canvas>
+
 #### Development Area
 
 <Canvas withSource="none">
@@ -1531,3 +1543,4 @@ const data = [
     {DevArea()}
   </Story>
 </Canvas>
+

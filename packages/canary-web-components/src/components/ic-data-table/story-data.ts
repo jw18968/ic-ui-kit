@@ -49,6 +49,39 @@ export const COLS: IcDataTableColumnObject[] = [
   },
 ];
 
+export const COLS_WIDTH: IcDataTableColumnObject[] = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: '12.5rem'
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      minWidth: '50px',
+      maxWidth: '200px',
+    }
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
 export const VERY_LONG_DATA = (rows: number = 100) => {
   const nextData = [];
   for (let i = 0; i < rows; i++) {
@@ -740,7 +773,7 @@ export const DATA_ELEMENTS = [
     age: 30,
     jobTitle: "Developer",
     address: "1 Main Street, Town, County, Postcode",
-    actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
+    actions: `<div style='display: flex; gap: 8px;'><ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button><ic-button>Test</ic-button></div>`,
   },
   {
     firstName: "Sarah",
@@ -833,6 +866,13 @@ export const createDataTableElement = (
 export const Basic = (): HTMLIcDataTableElement => {
   const dataTable = createDataTableElement("Basic Table");
   dataTable.setAttribute("sortable", "true");
+  return dataTable;
+};
+
+export const ColumnWidth = (): HTMLIcDataTableElement => {
+  const dataTable = createDataTableElement("Basic Table", COLS_WIDTH, DATA);
+  // dataTable.setAttribute("truncation-pattern", "tooltip");
+  // dataTable.setAttribute("global-row-height", "40");
   return dataTable;
 };
 

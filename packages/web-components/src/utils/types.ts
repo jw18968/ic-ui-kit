@@ -1,4 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import {
+  IcPaginationLabelTypes,
+  IcPaginationTypes,
+  IcPaginationAlignmentOptions,
+} from "../components";
+
 export type IcFocusableComponents =
   | HTMLIcBreadcrumbElement
   | HTMLIcButtonElement
@@ -209,3 +215,15 @@ type RGBA = `rgba(${string})`;
 type HEX = `#${string}`;
 
 export type IcColor = RGB | RGBA | HEX;
+export interface IcPaginationBarOptions {
+  itemsPerPageOptions?: { label: string; value: string }[];
+  rangeLabelType?: IcPaginationLabelTypes;
+  type?: IcPaginationTypes;
+  showItemsPerPageControl?: boolean;
+  showGoToPageControl?: boolean;
+  alignment?: IcPaginationAlignmentOptions;
+  appearance?: IcThemeForeground;
+  itemLabel?: string;
+  pageLabel?: string;
+  hideRangeLabel?: boolean;
+}

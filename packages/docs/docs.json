@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-08-12T14:32:40",
+  "timestamp": "2024-08-13T12:52:15",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.10.0",
@@ -10,7 +10,7 @@
       "filePath": "src/components/ic-accordion/ic-accordion.tsx",
       "encapsulation": "shadow",
       "tag": "ic-accordion",
-      "readme": "# ic-accordion\r\n\r\n\r\n\r",
+      "readme": "# ic-accordion\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -202,7 +202,7 @@
       "filePath": "src/components/ic-accordion-group/ic-accordion-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-accordion-group",
-      "readme": "# ic-accordion-title\r\n\r\n\r\n\r",
+      "readme": "# ic-accordion-title\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -441,7 +441,7 @@
       "filePath": "src/components/ic-alert/ic-alert.tsx",
       "encapsulation": "shadow",
       "tag": "ic-alert",
-      "readme": "# ic-alert\r\n\r\n\r\n\r",
+      "readme": "# ic-alert\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -697,7 +697,7 @@
       "filePath": "src/components/ic-back-to-top/ic-back-to-top.tsx",
       "encapsulation": "shadow",
       "tag": "ic-back-to-top",
-      "readme": "# ic-back-to-top\r\n\r\n\r\n\r",
+      "readme": "# ic-back-to-top\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -760,7 +760,13 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-back-to-top",
+          "annotation": "prop",
+          "docs": "z-index of back to top"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -782,7 +788,7 @@
       "filePath": "src/components/ic-badge/ic-badge.tsx",
       "encapsulation": "shadow",
       "tag": "ic-badge",
-      "readme": "# ic-badge\r\n\r\n\r\n\r",
+      "readme": "# ic-badge\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -1158,7 +1164,7 @@
       "filePath": "src/components/ic-breadcrumb/ic-breadcrumb.tsx",
       "encapsulation": "shadow",
       "tag": "ic-breadcrumb",
-      "readme": "# ic-breadcrumb\r\n\r\n\r\n\r",
+      "readme": "# ic-breadcrumb\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -1286,7 +1292,7 @@
       "filePath": "src/components/ic-breadcrumb-group/ic-breadcrumb-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-breadcrumb-group",
-      "readme": "# ic-breadcrumb-group\r\n\r\n\r\n\r",
+      "readme": "# ic-breadcrumb-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1396,7 +1402,7 @@
       "filePath": "src/components/ic-button/ic-button.tsx",
       "encapsulation": "shadow",
       "tag": "ic-button",
-      "readme": "# ic-button\r\n\r",
+      "readme": "# ic-button\n",
       "docs": "",
       "docsTags": [
         {
@@ -2286,7 +2292,18 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--height",
+          "annotation": "prop",
+          "docs": "The height of the button."
+        },
+        {
+          "name": "--min-width",
+          "annotation": "prop",
+          "docs": "Minimum width of the button."
+        }
+      ],
       "slots": [
         {
           "name": "badge",
@@ -2317,6 +2334,7 @@
       "dependents": [
         "ic-accordion-group",
         "ic-alert",
+        "ic-data-table",
         "ic-dialog",
         "ic-horizontal-scroll",
         "ic-menu",
@@ -2324,6 +2342,7 @@
         "ic-navigation-button",
         "ic-navigation-menu",
         "ic-pagination",
+        "ic-pagination-bar",
         "ic-search-bar",
         "ic-select",
         "ic-side-navigation",
@@ -2352,6 +2371,9 @@
         "ic-alert": [
           "ic-button"
         ],
+        "ic-data-table": [
+          "ic-button"
+        ],
         "ic-dialog": [
           "ic-button"
         ],
@@ -2371,6 +2393,9 @@
           "ic-button"
         ],
         "ic-pagination": [
+          "ic-button"
+        ],
+        "ic-pagination-bar": [
           "ic-button"
         ],
         "ic-search-bar": [
@@ -2397,7 +2422,7 @@
       "filePath": "src/components/ic-card/ic-card.tsx",
       "encapsulation": "shadow",
       "tag": "ic-card",
-      "readme": "# ic-card\r\n\r\n\r\n\r",
+      "readme": "# ic-card\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -2848,7 +2873,7 @@
       "filePath": "src/components/ic-checkbox/ic-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "ic-checkbox",
-      "readme": "# ic-checkbox\r\n\r\n\r\n\r",
+      "readme": "# ic-checkbox\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -3385,7 +3410,7 @@
       "filePath": "src/components/ic-checkbox-group/ic-checkbox-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-checkbox-group",
-      "readme": "# ic-checkbox-group\r\n\r\n\r\n\r",
+      "readme": "# ic-checkbox-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3708,7 +3733,7 @@
       "filePath": "src/components/ic-chip/ic-chip.tsx",
       "encapsulation": "shadow",
       "tag": "ic-chip",
-      "readme": "# ic-chip\r\n\r\n\r\n\r",
+      "readme": "# ic-chip\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -4050,7 +4075,7 @@
       "filePath": "src/components/ic-classification-banner/ic-classification-banner.tsx",
       "encapsulation": "shadow",
       "tag": "ic-classification-banner",
-      "readme": "# ic-classification-banner\r\n\r\n\r\n\r",
+      "readme": "# ic-classification-banner\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4192,7 +4217,13 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-classification-banner",
+          "annotation": "prop",
+          "docs": "z-index of classification banner"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -4209,7 +4240,7 @@
       "filePath": "src/components/ic-data-entity/ic-data-entity.tsx",
       "encapsulation": "shadow",
       "tag": "ic-data-entity",
-      "readme": "# ic-data-entity\r\n\r\n\r\n\r",
+      "readme": "# ic-data-entity\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -4327,7 +4358,7 @@
       "filePath": "src/components/ic-data-row/ic-data-row.tsx",
       "encapsulation": "shadow",
       "tag": "ic-data-row",
-      "readme": "# ic-data-row\r\n\r\n\r\n\r",
+      "readme": "# ic-data-row\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -4479,10 +4510,919 @@
       }
     },
     {
+      "filePath": "src/components/ic-data-table/ic-data-table.tsx",
+      "encapsulation": "shadow",
+      "tag": "ic-data-table",
+      "readme": "# ic-data-table\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "empty-state - Content is slotted below the table header when there is no data and the table is not loading."
+        },
+        {
+          "name": "slot",
+          "text": "{COLUMN_KEY}-{ROW_INDEX}[-icon] - Each cell should have its own slot, named using the column tag and the row index, allowing for custom elements to be displayed. Include `-icon` at the end for that cell's icon slot."
+        },
+        {
+          "name": "slot",
+          "text": "{COLUMN_KEY}-column-icon - The icon slot for a column header."
+        },
+        {
+          "name": "slot",
+          "text": "title-bar - A custom ic-data-table-title-bar can be slotted above the column headers to display additional information about the table."
+        },
+        {
+          "name": "slot",
+          "text": "pagination-bar - A custom ic-pagination-bar can be slotted below the data to provide enhanced control over how the data is interacted with when being fetched externally."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "caption",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "caption",
+          "reflectToAttr": false,
+          "docs": "The title for the table only visible to screen readers.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "columns",
+          "type": "IcDataTableColumnObject[]",
+          "complexType": {
+            "original": "IcDataTableColumnObject[]",
+            "resolved": "IcDataTableColumnObject[]",
+            "references": {
+              "IcDataTableColumnObject": {
+                "location": "import",
+                "path": "./ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableColumnObject"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "The column headers for the table.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "IcDataTableColumnObject[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "data",
+          "type": "{ [key: string]: any; }[]",
+          "complexType": {
+            "original": "{ [key: string]: any }[]",
+            "resolved": "{ [key: string]: any; }[]",
+            "references": {}
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "The row content for the table.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ [key: string]: any; }[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "density",
+          "type": "\"default\" | \"dense\" | \"spacious\"",
+          "complexType": {
+            "original": "IcDataTableDensityOptions",
+            "resolved": "\"default\" | \"dense\" | \"spacious\"",
+            "references": {
+              "IcDataTableDensityOptions": {
+                "location": "import",
+                "path": "./ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableDensityOptions"
+              }
+            }
+          },
+          "mutable": true,
+          "attr": "density",
+          "reflectToAttr": false,
+          "docs": "Set the density of the table including font and padding.",
+          "docsTags": [],
+          "default": "\"default\"",
+          "values": [
+            {
+              "value": "default",
+              "type": "string"
+            },
+            {
+              "value": "dense",
+              "type": "string"
+            },
+            {
+              "value": "spacious",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "embedded",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "embedded",
+          "reflectToAttr": false,
+          "docs": "Applies a border to the table container.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "globalRowHeight",
+          "type": "\"auto\" | number",
+          "complexType": {
+            "original": "IcDataTableRowHeights",
+            "resolved": "\"auto\" | number",
+            "references": {
+              "IcDataTableRowHeights": {
+                "location": "import",
+                "path": "./ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableRowHeights"
+              }
+            }
+          },
+          "mutable": true,
+          "attr": "global-row-height",
+          "reflectToAttr": false,
+          "docs": "Sets the row height on all rows in the table that aren't set using the `variableRowHeight` method.",
+          "docsTags": [],
+          "default": "\"auto\"",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hideColumnHeaders",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "hide-column-headers",
+          "reflectToAttr": false,
+          "docs": "If `true`, column headers will not be visible.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "loading",
+          "reflectToAttr": false,
+          "docs": "When set to `true`, the full table will show a loading state, featuring a radial indicator.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "loadingOptions",
+          "type": "{ appearance?: IcThemeForegroundNoDefault; description?: string; label?: string; labelDuration?: number; max?: number; min?: number; progress?: number; showBackground?: boolean; }",
+          "complexType": {
+            "original": "{\n    appearance?: IcThemeForegroundNoDefault;\n    description?: string;\n    label?: string;\n    labelDuration?: number;\n    max?: number;\n    min?: number;\n    progress?: number;\n    showBackground?: boolean;\n  }",
+            "resolved": "{ appearance?: IcThemeForegroundNoDefault; description?: string; label?: string; labelDuration?: number; max?: number; min?: number; progress?: number; showBackground?: boolean; }",
+            "references": {
+              "IcThemeForegroundNoDefault": {
+                "location": "import",
+                "path": "../../utils/types",
+                "id": "src/utils/types.ts::IcThemeForegroundNoDefault"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Sets the props for the circular loading indicator used in the loading state.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ appearance?: IcThemeForegroundNoDefault; description?: string; label?: string; labelDuration?: number; max?: number; min?: number; progress?: number; showBackground?: boolean; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "minimumLoadingDisplayDuration",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "minimum-loading-display-duration",
+          "reflectToAttr": false,
+          "docs": "The minimum amount of time the `loading` state displays for before showing the data. Used to prevent flashing in the component.",
+          "docsTags": [],
+          "default": "1000",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "paginationBarOptions",
+          "type": "IcPaginationBarOptions",
+          "complexType": {
+            "original": "IcPaginationBarOptions",
+            "resolved": "IcPaginationBarOptions",
+            "references": {
+              "IcPaginationBarOptions": {
+                "location": "import",
+                "path": "../../utils/types",
+                "id": "src/utils/types.ts::IcPaginationBarOptions"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Sets the props for the built-in pagination bar. If the `pagination-bar` slot is used then this prop is ignored.",
+          "docsTags": [],
+          "default": "{\n    itemsPerPageOptions: [\n      { label: \"10\", value: \"10\" },\n      { label: \"25\", value: \"25\" },\n      { label: \"50\", value: \"50\" },\n    ],\n    rangeLabelType: \"page\",\n    type: \"simple\",\n    showItemsPerPageControl: true,\n    showGoToPageControl: true,\n    alignment: \"right\",\n    appearance: \"default\",\n    itemLabel: \"Item\",\n    pageLabel: \"Page\",\n    hideRangeLabel: false,\n  }",
+          "values": [
+            {
+              "type": "IcPaginationBarOptions"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showPagination",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-pagination",
+          "reflectToAttr": false,
+          "docs": "If `true`, adds a pagination bar to the bottom of the table.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "sortOptions",
+          "type": "{ sortOrders: IcDataTableSortOrderOptions[]; defaultColumn?: string; }",
+          "complexType": {
+            "original": "{\n    sortOrders: IcDataTableSortOrderOptions[];\n    defaultColumn?: string;\n  }",
+            "resolved": "{ sortOrders: IcDataTableSortOrderOptions[]; defaultColumn?: string; }",
+            "references": {
+              "IcDataTableSortOrderOptions": {
+                "location": "import",
+                "path": "./ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableSortOrderOptions"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Sets the order columns will be sorted in and allows for 'default' sorts to be added.",
+          "docsTags": [],
+          "default": "{\n    sortOrders: [\"unsorted\", \"ascending\", \"descending\"],\n    defaultColumn: \"\",\n  }",
+          "values": [
+            {
+              "type": "{ sortOrders: IcDataTableSortOrderOptions[]; defaultColumn?: string; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "sortable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sortable",
+          "reflectToAttr": false,
+          "docs": "If `true`, allows table columns to be sorted using applied sort buttons.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "stickyColumnHeaders",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sticky-column-headers",
+          "reflectToAttr": false,
+          "docs": "If `true`, column headers will remain at the top of the table when scrolling vertically.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "stickyRowHeaders",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sticky-row-headers",
+          "reflectToAttr": false,
+          "docs": "If `true`, row headers will remain to the left when scrolling horizontally.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "truncationPattern",
+          "type": "\"show-hide\" | \"tooltip\"",
+          "complexType": {
+            "original": "IcDataTableTruncationTypes",
+            "resolved": "\"show-hide\" | \"tooltip\"",
+            "references": {
+              "IcDataTableTruncationTypes": {
+                "location": "import",
+                "path": "./ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableTruncationTypes"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "truncation-pattern",
+          "reflectToAttr": false,
+          "docs": "Sets the method used to truncate longer text in cells where textWrap is `false`.\nThe `tooltip` truncation pattern allows the overflowing text to be seen in a tooltip. The `showHide` truncation pattern allows the overflowing text to be shown and hidden using the ic-typography \"See more\"/\"See less\" buttons.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "show-hide",
+              "type": "string"
+            },
+            {
+              "value": "tooltip",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "updating",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "updating",
+          "reflectToAttr": false,
+          "docs": "If `true`, the table displays a linear loading indicator below the header row to indicate an updating state.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "updatingOptions",
+          "type": "{ appearance?: IcThemeForegroundNoDefault; description?: string; max?: number; min?: number; progress?: number; }",
+          "complexType": {
+            "original": "{\n    appearance?: IcThemeForegroundNoDefault;\n    description?: string;\n    max?: number;\n    min?: number;\n    progress?: number;\n  }",
+            "resolved": "{ appearance?: IcThemeForegroundNoDefault; description?: string; max?: number; min?: number; progress?: number; }",
+            "references": {
+              "IcThemeForegroundNoDefault": {
+                "location": "import",
+                "path": "../../utils/types",
+                "id": "src/utils/types.ts::IcThemeForegroundNoDefault"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Sets the props for the linear loading indicator used in the updating state.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ appearance?: IcThemeForegroundNoDefault; description?: string; max?: number; min?: number; progress?: number; }"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variableRowHeight",
+          "type": "(params: { [key: string]: any; index: number; }) => IcDataTableRowHeights",
+          "complexType": {
+            "original": "(params: {\n    [key: string]: any;\n    index: number;\n  }) => IcDataTableRowHeights | null",
+            "resolved": "(params: { [key: string]: any; index: number; }) => IcDataTableRowHeights",
+            "references": {
+              "IcDataTableRowHeights": {
+                "location": "import",
+                "path": "./ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableRowHeights"
+              }
+            }
+          },
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Allows for custom setting of row heights on individual rows based on an individual value from the `data` prop and the row index.\nIf the function returns `null`, that row's height will be set to the `globalRowHeight` property.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "(params: { [key: string]: any; index: number; }) => IcDataTableRowHeights"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "resetRowHeights",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "(rowHeight?: number | \"auto\") => Promise<void>",
+            "parameters": [
+              {
+                "name": "rowHeight",
+                "type": "number | \"auto\"",
+                "docs": ""
+              }
+            ],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "resetRowHeights(rowHeight?: number | \"auto\") => Promise<void>",
+          "parameters": [
+            {
+              "name": "rowHeight",
+              "type": "number | \"auto\"",
+              "docs": ""
+            }
+          ],
+          "docs": "Resets the `globalRowHeight` prop to number or auto and sets the `variableRowHeight` prop to `null`.",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "icRowHeightChange",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the `globalRowHeight` or `variableRowHeight` properties change in the data table.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "typographyTruncationExpandToggle",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "icPageChange",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "icItemsPerPageChange",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "icTableDensityUpdate",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "empty-state",
+          "docs": "Content is slotted below the table header when there is no data and the table is not loading."
+        },
+        {
+          "name": "pagination-bar",
+          "docs": "A custom ic-pagination-bar can be slotted below the data to provide enhanced control over how the data is interacted with when being fetched externally."
+        },
+        {
+          "name": "title-bar",
+          "docs": "A custom ic-data-table-title-bar can be slotted above the column headers to display additional information about the table."
+        },
+        {
+          "name": "{COLUMN_KEY}-column-icon",
+          "docs": "The icon slot for a column header."
+        },
+        {
+          "name": "{COLUMN_KEY}-{ROW_INDEX}[-icon]",
+          "docs": "Each cell should have its own slot, named using the column tag and the row index, allowing for custom elements to be displayed. Include `-icon` at the end for that cell's icon slot."
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ic-loading-indicator",
+        "ic-typography",
+        "ic-link",
+        "ic-button",
+        "ic-tooltip",
+        "ic-empty-state",
+        "ic-pagination-bar"
+      ],
+      "dependencyGraph": {
+        "ic-data-table": [
+          "ic-loading-indicator",
+          "ic-typography",
+          "ic-link",
+          "ic-button",
+          "ic-tooltip",
+          "ic-empty-state",
+          "ic-pagination-bar"
+        ],
+        "ic-loading-indicator": [
+          "ic-typography"
+        ],
+        "ic-button": [
+          "ic-loading-indicator",
+          "ic-tooltip"
+        ],
+        "ic-tooltip": [
+          "ic-typography"
+        ],
+        "ic-empty-state": [
+          "ic-typography"
+        ],
+        "ic-pagination-bar": [
+          "ic-typography",
+          "ic-select",
+          "ic-pagination",
+          "ic-tooltip",
+          "ic-text-field",
+          "ic-button"
+        ],
+        "ic-select": [
+          "ic-input-container",
+          "ic-input-label",
+          "ic-input-component-container",
+          "ic-typography",
+          "ic-button",
+          "ic-menu",
+          "ic-input-validation"
+        ],
+        "ic-input-label": [
+          "ic-typography"
+        ],
+        "ic-menu": [
+          "ic-loading-indicator",
+          "ic-typography",
+          "ic-button"
+        ],
+        "ic-input-validation": [
+          "ic-typography"
+        ],
+        "ic-pagination": [
+          "ic-button",
+          "ic-pagination-item"
+        ],
+        "ic-pagination-item": [
+          "ic-typography"
+        ],
+        "ic-text-field": [
+          "ic-input-container",
+          "ic-input-label",
+          "ic-input-component-container",
+          "ic-input-validation",
+          "ic-typography"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ic-data-table-title-bar/ic-data-table-title-bar.tsx",
+      "encapsulation": "shadow",
+      "tag": "ic-data-table-title-bar",
+      "readme": "# ic-data-table-title-bar\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "primary-action - Render an interactive element that will perform a primary action. Renders to the right of the density select."
+        },
+        {
+          "name": "slot",
+          "text": "custom-actions - Render additional custom actions to the left of the density select."
+        },
+        {
+          "name": "slot",
+          "text": "heading - The heading to render on the data table title bar."
+        },
+        {
+          "name": "slot",
+          "text": "description - Render an alternative description in the description section."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "description",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "description",
+          "reflectToAttr": false,
+          "docs": "The description that is displayed below the `heading` and `metadata`. Can be overridden with the `description` slot.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "The heading of the title bar. Can be overridden with the `heading` slot. If used with an `ic-data-table` it will default to the table's `caption` unless overridden.",
+          "docsTags": [],
+          "default": "DEFAULT_TITLE_BAR_HEADING",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hideDensitySelect",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "hide-density-select",
+          "reflectToAttr": false,
+          "docs": "When `true`, the density select will not be rendered.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "metadata",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "metadata",
+          "reflectToAttr": false,
+          "docs": "The metadata displayed next to the `heading`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "icTableDensityUpdate",
+          "detail": "IcDensityUpdateEventDetail",
+          "bubbles": true,
+          "complexType": {
+            "original": "IcDensityUpdateEventDetail",
+            "resolved": "IcDensityUpdateEventDetail",
+            "references": {
+              "IcDensityUpdateEventDetail": {
+                "location": "import",
+                "path": "../ic-data-table/ic-data-table.types",
+                "id": "src/components/ic-data-table/ic-data-table.types.tsx::IcDensityUpdateEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the table density select value is changed.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "custom-actions",
+          "docs": "Render additional custom actions to the left of the density select."
+        },
+        {
+          "name": "description",
+          "docs": "Render an alternative description in the description section."
+        },
+        {
+          "name": "heading",
+          "docs": "The heading to render on the data table title bar."
+        },
+        {
+          "name": "primary-action",
+          "docs": "Render an interactive element that will perform a primary action. Renders to the right of the density select."
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ic-typography",
+        "ic-select"
+      ],
+      "dependencyGraph": {
+        "ic-data-table-title-bar": [
+          "ic-typography",
+          "ic-select"
+        ],
+        "ic-select": [
+          "ic-input-container",
+          "ic-input-label",
+          "ic-input-component-container",
+          "ic-typography",
+          "ic-button",
+          "ic-menu",
+          "ic-input-validation"
+        ],
+        "ic-input-label": [
+          "ic-typography"
+        ],
+        "ic-button": [
+          "ic-loading-indicator",
+          "ic-tooltip"
+        ],
+        "ic-loading-indicator": [
+          "ic-typography"
+        ],
+        "ic-tooltip": [
+          "ic-typography"
+        ],
+        "ic-menu": [
+          "ic-loading-indicator",
+          "ic-typography",
+          "ic-button"
+        ],
+        "ic-input-validation": [
+          "ic-typography"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/ic-dialog/ic-dialog.tsx",
       "encapsulation": "shadow",
       "tag": "ic-dialog",
-      "readme": "# ic-dialog\r\n\r\n\r\n\r",
+      "readme": "# ic-dialog\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -5046,7 +5986,13 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-dialog",
+          "annotation": "prop",
+          "docs": "z-index of dialog"
+        }
+      ],
       "slots": [
         {
           "name": "alert",
@@ -5098,7 +6044,7 @@
       "filePath": "src/components/ic-divider/ic-divider.tsx",
       "encapsulation": "scoped",
       "tag": "ic-divider",
-      "readme": "# ic-divider\r\n\r\n\r\n\r",
+      "readme": "# ic-divider\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -5130,7 +6076,7 @@
       "filePath": "src/components/ic-empty-state/ic-empty-state.tsx",
       "encapsulation": "shadow",
       "tag": "ic-empty-state",
-      "readme": "# ic-empty-state\r\n\r\n\r\n\r",
+      "readme": "# ic-empty-state\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -5342,13 +6288,18 @@
         }
       ],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "ic-data-table"
+      ],
       "dependencies": [
         "ic-typography"
       ],
       "dependencyGraph": {
         "ic-empty-state": [
           "ic-typography"
+        ],
+        "ic-data-table": [
+          "ic-empty-state"
         ]
       }
     },
@@ -5356,7 +6307,7 @@
       "filePath": "src/components/ic-footer/ic-footer.tsx",
       "encapsulation": "shadow",
       "tag": "ic-footer",
-      "readme": "# ic-footer\r\n\r\n\r\n\r",
+      "readme": "# ic-footer\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -5593,7 +6544,7 @@
       "filePath": "src/components/ic-footer-link/ic-footer-link.tsx",
       "encapsulation": "shadow",
       "tag": "ic-footer-link",
-      "readme": "# ic-footer-link\r\n\r\n\r\n\r",
+      "readme": "# ic-footer-link\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -5794,7 +6745,7 @@
       "filePath": "src/components/ic-footer-link-group/ic-footer-link-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-footer-link-group",
-      "readme": "# ic-footer-link-group\r\n\r\n\r\n\r",
+      "readme": "# ic-footer-link-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -5856,7 +6807,7 @@
       "filePath": "src/components/ic-hero/ic-hero.tsx",
       "encapsulation": "shadow",
       "tag": "ic-hero",
-      "readme": "# ic-hero\r\n\r\n\r\n\r",
+      "readme": "# ic-hero\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -6189,7 +7140,7 @@
       "filePath": "src/components/ic-horizontal-scroll/ic-horizontal-scroll.tsx",
       "encapsulation": "shadow",
       "tag": "ic-horizontal-scroll",
-      "readme": "# ic-horizontal-scroll\r\n\r\n\r\n\r",
+      "readme": "# ic-horizontal-scroll\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -6275,7 +7226,7 @@
       "filePath": "src/components/ic-input-component-container/ic-input-component-container.tsx",
       "encapsulation": "none",
       "tag": "ic-input-component-container",
-      "readme": "# ic-input-container\r\n\r\n\r\n\r",
+      "readme": "# ic-input-container\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -6559,7 +7510,13 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--border-color",
+          "annotation": "prop",
+          "docs": "Border colour of the input component container"
+        }
+      ],
       "slots": [
         {
           "name": "left-icon",
@@ -6585,7 +7542,7 @@
       "filePath": "src/components/ic-input-container/ic-input-container.tsx",
       "encapsulation": "none",
       "tag": "ic-input-container",
-      "readme": "# ic-input-container\r\n\r\n\r\n\r",
+      "readme": "# ic-input-container\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -6659,7 +7616,7 @@
       "filePath": "src/components/ic-input-label/ic-input-label.tsx",
       "encapsulation": "none",
       "tag": "ic-input-label",
-      "readme": "# ic-input-label\r\n\r\n\r\n\r",
+      "readme": "# ic-input-label\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -6913,7 +7870,7 @@
       "filePath": "src/components/ic-input-validation/ic-input-validation.tsx",
       "encapsulation": "none",
       "tag": "ic-input-validation",
-      "readme": "# ic-input-validation\r\n\r\n\r\n\r",
+      "readme": "# ic-input-validation\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -7103,7 +8060,7 @@
       "filePath": "src/components/ic-link/ic-link.tsx",
       "encapsulation": "shadow",
       "tag": "ic-link",
-      "readme": "# ic-link\r\n\r\n\r\n\r",
+      "readme": "# ic-link\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -7388,11 +8345,15 @@
       ],
       "parts": [],
       "dependents": [
-        "ic-breadcrumb"
+        "ic-breadcrumb",
+        "ic-data-table"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "ic-breadcrumb": [
+          "ic-link"
+        ],
+        "ic-data-table": [
           "ic-link"
         ]
       }
@@ -7401,7 +8362,7 @@
       "filePath": "src/components/ic-loading-indicator/ic-loading-indicator.tsx",
       "encapsulation": "shadow",
       "tag": "ic-loading-indicator",
-      "readme": "# ic-loading\r\n\r\n\r\n\r",
+      "readme": "# ic-loading\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -7669,7 +8630,13 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--circular-diameter",
+          "annotation": "prop",
+          "docs": "Diameter of the circular-indicator"
+        }
+      ],
       "slots": [],
       "parts": [
         {
@@ -7679,6 +8646,7 @@
       ],
       "dependents": [
         "ic-button",
+        "ic-data-table",
         "ic-menu",
         "ic-step",
         "ic-toast"
@@ -7691,6 +8659,9 @@
           "ic-typography"
         ],
         "ic-button": [
+          "ic-loading-indicator"
+        ],
+        "ic-data-table": [
           "ic-loading-indicator"
         ],
         "ic-menu": [
@@ -7708,7 +8679,7 @@
       "filePath": "src/components/ic-menu/ic-menu.tsx",
       "encapsulation": "scoped",
       "tag": "ic-menu",
-      "readme": "# ic-menu\r\n\r\n\r\n\r",
+      "readme": "# ic-menu\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -8118,7 +9089,13 @@
       ],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-menu",
+          "annotation": "prop",
+          "docs": "z-index of menu"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [
@@ -8158,7 +9135,7 @@
       "filePath": "src/components/ic-menu-group/ic-menu-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-menu-group",
-      "readme": "# ic-menu-group\r\n\r\n\r\n\r",
+      "readme": "# ic-menu-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -8205,7 +9182,7 @@
       "filePath": "src/components/ic-menu-item/ic-menu-item.tsx",
       "encapsulation": "shadow",
       "tag": "ic-menu-item",
-      "readme": "# ic-menu-item\r\n\r\n\r\n\r",
+      "readme": "# ic-menu-item\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -8549,7 +9526,7 @@
       "filePath": "src/components/ic-navigation-button/ic-navigation-button.tsx",
       "encapsulation": "shadow",
       "tag": "ic-navigation-button",
-      "readme": "# ic-navigation-button\r\n\r\n\r\n\r",
+      "readme": "# ic-navigation-button\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -8833,7 +9810,7 @@
       "filePath": "src/components/ic-navigation-group/ic-navigation-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-navigation-group",
-      "readme": "# ic-navigation-group\r\n\r\n\r\n\r",
+      "readme": "# ic-navigation-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -8925,7 +9902,13 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-navigation-item",
+          "annotation": "prop",
+          "docs": "z-index of navigation group item"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -8942,7 +9925,7 @@
       "filePath": "src/components/ic-navigation-item/ic-navigation-item.tsx",
       "encapsulation": "shadow",
       "tag": "ic-navigation-item",
-      "readme": "# ic-navigation-item\r\n\r\n\r\n\r",
+      "readme": "# ic-navigation-item\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -9205,7 +10188,13 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-navigation-item",
+          "annotation": "prop",
+          "docs": "z-index of navigation item"
+        }
+      ],
       "slots": [
         {
           "name": "badge",
@@ -9241,7 +10230,7 @@
       "filePath": "src/components/ic-navigation-menu/ic-navigation-menu.tsx",
       "encapsulation": "shadow",
       "tag": "ic-navigation-menu",
-      "readme": "# ic-navigation-menu\r\n\r\n\r\n\r",
+      "readme": "# ic-navigation-menu\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -9315,7 +10304,13 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-navigation-menu",
+          "annotation": "prop",
+          "docs": "z-index of navigation menu"
+        }
+      ],
       "slots": [
         {
           "name": "buttons",
@@ -9358,7 +10353,7 @@
       "filePath": "src/components/ic-page-header/ic-page-header.tsx",
       "encapsulation": "shadow",
       "tag": "ic-page-header",
-      "readme": "# ic-page-header\r\n\r\n\r\n\r",
+      "readme": "# ic-page-header\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -9628,7 +10623,13 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-page-header",
+          "annotation": "prop",
+          "docs": "z-index of page-header"
+        }
+      ],
       "slots": [
         {
           "name": "actions",
@@ -9695,7 +10696,7 @@
       "filePath": "src/components/ic-pagination/ic-pagination.tsx",
       "encapsulation": "shadow",
       "tag": "ic-pagination",
-      "readme": "# ic-pagination\r\n\r\n\r\n\r",
+      "readme": "# ic-pagination\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -10041,7 +11042,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "ic-pagination-bar"
+      ],
       "dependencies": [
         "ic-button",
         "ic-pagination-item"
@@ -10063,6 +11066,420 @@
         ],
         "ic-pagination-item": [
           "ic-typography"
+        ],
+        "ic-pagination-bar": [
+          "ic-pagination"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ic-pagination-bar/ic-pagination-bar.tsx",
+      "encapsulation": "shadow",
+      "tag": "ic-pagination-bar",
+      "readme": "# ic-pagination-bar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alignment",
+          "type": "\"left\" | \"right\" | \"space-between\"",
+          "complexType": {
+            "original": "IcPaginationAlignmentOptions",
+            "resolved": "\"left\" | \"right\" | \"space-between\"",
+            "references": {
+              "IcPaginationAlignmentOptions": {
+                "location": "import",
+                "path": "../ic-pagination/ic-pagination.types",
+                "id": "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationAlignmentOptions"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "Sets the alignment of the items in the pagination bar.",
+          "docsTags": [],
+          "default": "\"right\"",
+          "values": [
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "space-between",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "appearance",
+          "type": "\"dark\" | \"default\" | \"light\"",
+          "complexType": {
+            "original": "IcThemeForeground",
+            "resolved": "\"dark\" | \"default\" | \"light\"",
+            "references": {
+              "IcThemeForeground": {
+                "location": "import",
+                "path": "../../utils/types",
+                "id": "src/utils/types.ts::IcThemeForeground"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "appearance",
+          "reflectToAttr": false,
+          "docs": "Sets the styling for the items in the pagination bar.",
+          "docsTags": [],
+          "default": "\"default\"",
+          "values": [
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "default",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hideRangeLabel",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "hide-range-label",
+          "reflectToAttr": false,
+          "docs": "If `true`, the number of total items and current item range or number of total pages and current page will be hidden.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "itemLabel",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "item-label",
+          "reflectToAttr": false,
+          "docs": "The text which will be used in place of 'Item' on the pagination bar.",
+          "docsTags": [],
+          "default": "\"Item\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "itemsPerPageOptions",
+          "type": "{ label: string; value: string; }[]",
+          "complexType": {
+            "original": "{\n    label: string;\n    value: string;\n  }[]",
+            "resolved": "{ label: string; value: string; }[]",
+            "references": {}
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "The options which will be displayed for 'items per page' select input. Set a maximum of 4 options including a required 'All' option with value equal to total number of items.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ label: string; value: string; }[]"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "pageLabel",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "page-label",
+          "reflectToAttr": false,
+          "docs": "The text which will be used in place of 'Page' on the pagination bar.",
+          "docsTags": [],
+          "default": "\"Page\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "rangeLabelType",
+          "type": "\"data\" | \"page\"",
+          "complexType": {
+            "original": "IcPaginationLabelTypes",
+            "resolved": "\"data\" | \"page\"",
+            "references": {
+              "IcPaginationLabelTypes": {
+                "location": "import",
+                "path": "../ic-pagination/ic-pagination.types",
+                "id": "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationLabelTypes"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "range-label-type",
+          "reflectToAttr": false,
+          "docs": "Whether total number of items and current item range or total number of pages and current page is displayed.",
+          "docsTags": [],
+          "default": "\"page\"",
+          "values": [
+            {
+              "value": "data",
+              "type": "string"
+            },
+            {
+              "value": "page",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showGoToPageControl",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-go-to-page-control",
+          "reflectToAttr": false,
+          "docs": "If `true`, the 'go to page' control should be displayed.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showItemsPerPageControl",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-items-per-page-control",
+          "reflectToAttr": false,
+          "docs": "If `true`, the select input to control 'items per page' should be displayed.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "totalItems",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "total-items",
+          "reflectToAttr": false,
+          "docs": "Total number of items to be displayed across all pages.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "\"complex\" | \"simple\"",
+          "complexType": {
+            "original": "IcPaginationTypes",
+            "resolved": "\"complex\" | \"simple\"",
+            "references": {
+              "IcPaginationTypes": {
+                "location": "import",
+                "path": "../ic-pagination/ic-pagination.types",
+                "id": "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationTypes"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Whether the displayed pagination is simple or complex.",
+          "docsTags": [],
+          "default": "\"simple\"",
+          "values": [
+            {
+              "value": "complex",
+              "type": "string"
+            },
+            {
+              "value": "simple",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "icItemsPerPageChange",
+          "detail": "{ value: number; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: number }",
+            "resolved": "{ value: number; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the items per page option is changed.",
+          "docsTags": []
+        },
+        {
+          "event": "icPageChange",
+          "detail": "{ value: number; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: number }",
+            "resolved": "{ value: number; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a page is navigated to via the 'go to' input.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "icPageChange",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ic-data-table"
+      ],
+      "dependencies": [
+        "ic-typography",
+        "ic-select",
+        "ic-pagination",
+        "ic-tooltip",
+        "ic-text-field",
+        "ic-button"
+      ],
+      "dependencyGraph": {
+        "ic-pagination-bar": [
+          "ic-typography",
+          "ic-select",
+          "ic-pagination",
+          "ic-tooltip",
+          "ic-text-field",
+          "ic-button"
+        ],
+        "ic-select": [
+          "ic-input-container",
+          "ic-input-label",
+          "ic-input-component-container",
+          "ic-typography",
+          "ic-button",
+          "ic-menu",
+          "ic-input-validation"
+        ],
+        "ic-input-label": [
+          "ic-typography"
+        ],
+        "ic-button": [
+          "ic-loading-indicator",
+          "ic-tooltip"
+        ],
+        "ic-loading-indicator": [
+          "ic-typography"
+        ],
+        "ic-tooltip": [
+          "ic-typography"
+        ],
+        "ic-menu": [
+          "ic-loading-indicator",
+          "ic-typography",
+          "ic-button"
+        ],
+        "ic-input-validation": [
+          "ic-typography"
+        ],
+        "ic-pagination": [
+          "ic-button",
+          "ic-pagination-item"
+        ],
+        "ic-pagination-item": [
+          "ic-typography"
+        ],
+        "ic-text-field": [
+          "ic-input-container",
+          "ic-input-label",
+          "ic-input-component-container",
+          "ic-input-validation",
+          "ic-typography"
+        ],
+        "ic-data-table": [
+          "ic-pagination-bar"
         ]
       }
     },
@@ -10070,7 +11487,7 @@
       "filePath": "src/components/ic-pagination-item/ic-pagination-item.tsx",
       "encapsulation": "shadow",
       "tag": "ic-pagination-item",
-      "readme": "# ic-pagination-item\r\n\r\n\r\n\r",
+      "readme": "# ic-pagination-item\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -10261,7 +11678,7 @@
       "filePath": "src/components/ic-popover-menu/ic-popover-menu.tsx",
       "encapsulation": "shadow",
       "tag": "ic-popover-menu",
-      "readme": "# ic-popover-menu\r\n\r\nThis is a wrapper component to be placed around one or more ic-menu-item components.\r\n\r",
+      "readme": "# ic-popover-menu\n\nThis is a wrapper component to be placed around one or more ic-menu-item components.\n",
       "docs": "This is a wrapper component to be placed around one or more ic-menu-item components.",
       "docsTags": [],
       "usage": {},
@@ -10371,7 +11788,23 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-popover",
+          "annotation": "prop",
+          "docs": "z-index of popover menu."
+        },
+        {
+          "name": "--max-height",
+          "annotation": "prop",
+          "docs": "Maximum height of the popover menu."
+        },
+        {
+          "name": "--popover-width",
+          "annotation": "prop",
+          "docs": "Default width of the popover menu."
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -10404,7 +11837,7 @@
       "filePath": "src/components/ic-radio-group/ic-radio-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-radio-group",
-      "readme": "# ic-radio-group\r\n\r\n\r\n\r",
+      "readme": "# ic-radio-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -10755,7 +12188,7 @@
       "filePath": "src/components/ic-radio-option/ic-radio-option.tsx",
       "encapsulation": "shadow",
       "tag": "ic-radio-option",
-      "readme": "# ic-radio-option\r\n\r\n\r\n\r",
+      "readme": "# ic-radio-option\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -11190,7 +12623,7 @@
       "filePath": "src/components/ic-search-bar/ic-search-bar.tsx",
       "encapsulation": "shadow",
       "tag": "ic-search-bar",
-      "readme": "# ic-search-bar\r\n\r\n\r\n\r",
+      "readme": "# ic-search-bar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11219,10 +12652,10 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"name\" | \"on\" | \"off\" | \"additional-name\" | \"address-level1\" | \"address-level2\" | \"address-level3\" | \"address-level4\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-family-name\" | \"cc-given-name\" | \"cc-name\" | \"cc-number\" | \"cc-type\" | \"country\" | \"country-name\" | \"current-password\" | \"family-name\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"new-password\" | \"one-time-code\" | \"organization\" | \"postal-code\" | \"street-address\" | \"transaction-amount\" | \"transaction-currency\" | \"username\" | \"email\" | \"tel\" | \"tel-area-code\" | \"tel-country-code\" | \"tel-extension\" | \"tel-local\" | \"tel-national\" | \"nickname\" | \"organization-title\" | \"cc-additional-name\" | \"language\" | \"bday\" | \"sex\" | \"impp\" | \"url\" | \"photo\"",
+          "type": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
           "complexType": {
             "original": "IcAutocompleteTypes",
-            "resolved": "\"name\" | \"on\" | \"off\" | \"additional-name\" | \"address-level1\" | \"address-level2\" | \"address-level3\" | \"address-level4\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-family-name\" | \"cc-given-name\" | \"cc-name\" | \"cc-number\" | \"cc-type\" | \"country\" | \"country-name\" | \"current-password\" | \"family-name\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"new-password\" | \"one-time-code\" | \"organization\" | \"postal-code\" | \"street-address\" | \"transaction-amount\" | \"transaction-currency\" | \"username\" | \"email\" | \"tel\" | \"tel-area-code\" | \"tel-country-code\" | \"tel-extension\" | \"tel-local\" | \"tel-national\" | \"nickname\" | \"organization-title\" | \"cc-additional-name\" | \"language\" | \"bday\" | \"sex\" | \"impp\" | \"url\" | \"photo\"",
+            "resolved": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
             "references": {
               "IcAutocompleteTypes": {
                 "location": "import",
@@ -11251,23 +12684,59 @@
               "type": "string"
             },
             {
+              "value": "honorific-prefix",
+              "type": "string"
+            },
+            {
+              "value": "given-name",
+              "type": "string"
+            },
+            {
               "value": "additional-name",
               "type": "string"
             },
             {
-              "value": "address-level1",
+              "value": "family-name",
               "type": "string"
             },
             {
-              "value": "address-level2",
+              "value": "honorific-suffix",
               "type": "string"
             },
             {
-              "value": "address-level3",
+              "value": "nickname",
               "type": "string"
             },
             {
-              "value": "address-level4",
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "username",
+              "type": "string"
+            },
+            {
+              "value": "new-password",
+              "type": "string"
+            },
+            {
+              "value": "current-password",
+              "type": "string"
+            },
+            {
+              "value": "one-time-code",
+              "type": "string"
+            },
+            {
+              "value": "organization-title",
+              "type": "string"
+            },
+            {
+              "value": "organization",
+              "type": "string"
+            },
+            {
+              "value": "street-address",
               "type": "string"
             },
             {
@@ -11283,19 +12752,51 @@
               "type": "string"
             },
             {
-              "value": "bday-day",
+              "value": "address-level4",
               "type": "string"
             },
             {
-              "value": "bday-month",
+              "value": "address-level3",
               "type": "string"
             },
             {
-              "value": "bday-year",
+              "value": "address-level2",
               "type": "string"
             },
             {
-              "value": "cc-csc",
+              "value": "address-level1",
+              "type": "string"
+            },
+            {
+              "value": "country",
+              "type": "string"
+            },
+            {
+              "value": "country-name",
+              "type": "string"
+            },
+            {
+              "value": "postal-code",
+              "type": "string"
+            },
+            {
+              "value": "cc-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-given-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-additional-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-family-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-number",
               "type": "string"
             },
             {
@@ -11311,19 +12812,7 @@
               "type": "string"
             },
             {
-              "value": "cc-family-name",
-              "type": "string"
-            },
-            {
-              "value": "cc-given-name",
-              "type": "string"
-            },
-            {
-              "value": "cc-name",
-              "type": "string"
-            },
-            {
-              "value": "cc-number",
+              "value": "cc-csc",
               "type": "string"
             },
             {
@@ -11331,103 +12820,11 @@
               "type": "string"
             },
             {
-              "value": "country",
-              "type": "string"
-            },
-            {
-              "value": "country-name",
-              "type": "string"
-            },
-            {
-              "value": "current-password",
-              "type": "string"
-            },
-            {
-              "value": "family-name",
-              "type": "string"
-            },
-            {
-              "value": "given-name",
-              "type": "string"
-            },
-            {
-              "value": "honorific-prefix",
-              "type": "string"
-            },
-            {
-              "value": "honorific-suffix",
-              "type": "string"
-            },
-            {
-              "value": "new-password",
-              "type": "string"
-            },
-            {
-              "value": "one-time-code",
-              "type": "string"
-            },
-            {
-              "value": "organization",
-              "type": "string"
-            },
-            {
-              "value": "postal-code",
-              "type": "string"
-            },
-            {
-              "value": "street-address",
-              "type": "string"
-            },
-            {
-              "value": "transaction-amount",
-              "type": "string"
-            },
-            {
               "value": "transaction-currency",
               "type": "string"
             },
             {
-              "value": "username",
-              "type": "string"
-            },
-            {
-              "value": "email",
-              "type": "string"
-            },
-            {
-              "value": "tel",
-              "type": "string"
-            },
-            {
-              "value": "tel-area-code",
-              "type": "string"
-            },
-            {
-              "value": "tel-country-code",
-              "type": "string"
-            },
-            {
-              "value": "tel-extension",
-              "type": "string"
-            },
-            {
-              "value": "tel-local",
-              "type": "string"
-            },
-            {
-              "value": "tel-national",
-              "type": "string"
-            },
-            {
-              "value": "nickname",
-              "type": "string"
-            },
-            {
-              "value": "organization-title",
-              "type": "string"
-            },
-            {
-              "value": "cc-additional-name",
+              "value": "transaction-amount",
               "type": "string"
             },
             {
@@ -11439,7 +12836,43 @@
               "type": "string"
             },
             {
+              "value": "bday-day",
+              "type": "string"
+            },
+            {
+              "value": "bday-month",
+              "type": "string"
+            },
+            {
+              "value": "bday-year",
+              "type": "string"
+            },
+            {
               "value": "sex",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "tel-country-code",
+              "type": "string"
+            },
+            {
+              "value": "tel-national",
+              "type": "string"
+            },
+            {
+              "value": "tel-area-code",
+              "type": "string"
+            },
+            {
+              "value": "tel-local",
+              "type": "string"
+            },
+            {
+              "value": "tel-extension",
               "type": "string"
             },
             {
@@ -12397,7 +13830,13 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-menu",
+          "annotation": "prop",
+          "docs": "z-index of search bar menu"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -12446,7 +13885,7 @@
       "filePath": "src/components/ic-section-container/ic-section-container.tsx",
       "encapsulation": "shadow",
       "tag": "ic-section-container",
-      "readme": "# ic-section-container\r\n\r\n\r\n\r",
+      "readme": "# ic-section-container\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -12547,7 +13986,7 @@
       "filePath": "src/components/ic-select/ic-select.tsx",
       "encapsulation": "shadow",
       "tag": "ic-select",
-      "readme": "# ic-select\r\n\r\n\r\n\r",
+      "readme": "# ic-select\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -13557,7 +14996,18 @@
         }
       ],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-menu",
+          "annotation": "prop",
+          "docs": "z-index of select menu"
+        },
+        {
+          "name": "--input-width",
+          "annotation": "prop",
+          "docs": "Width of the input field"
+        }
+      ],
       "slots": [
         {
           "name": "icon",
@@ -13565,7 +15015,10 @@
         }
       ],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "ic-data-table-title-bar",
+        "ic-pagination-bar"
+      ],
       "dependencies": [
         "ic-input-container",
         "ic-input-label",
@@ -13605,6 +15058,12 @@
         ],
         "ic-input-validation": [
           "ic-typography"
+        ],
+        "ic-data-table-title-bar": [
+          "ic-select"
+        ],
+        "ic-pagination-bar": [
+          "ic-select"
         ]
       }
     },
@@ -13612,7 +15071,7 @@
       "filePath": "src/components/ic-side-navigation/ic-side-navigation.tsx",
       "encapsulation": "shadow",
       "tag": "ic-side-navigation",
-      "readme": "# ic-side-navigation\r\n\r\n\r\n\r",
+      "readme": "# ic-side-navigation\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -13883,7 +15342,13 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-side-navigation",
+          "annotation": "prop",
+          "docs": "z-index of side navigation panel"
+        }
+      ],
       "slots": [
         {
           "name": "app-icon",
@@ -13931,8 +15396,8 @@
       "filePath": "src/components/ic-skeleton/ic-skeleton.tsx",
       "encapsulation": "shadow",
       "tag": "ic-skeleton",
-      "readme": "# ic-skeleton\r\n\r\nWhen using the skeleton component, an aria-live level should be applied to the parent element of the skeleton and the element that it is\r\nrepresenting so that any changes, such as the real element replacing the skeleton placeholder, are announced to assistive technology like screen readers. The recommendation is to use aria-live=\"polite\" over aria-live=\"recommended\" unless changes are critically important. \r\n\r",
-      "docs": "When using the skeleton component, an aria-live level should be applied to the parent element of the skeleton and the element that it is\r\nrepresenting so that any changes, such as the real element replacing the skeleton placeholder, are announced to assistive technology like screen readers. The recommendation is to use aria-live=\"polite\" over aria-live=\"recommended\" unless changes are critically important.",
+      "readme": "# ic-skeleton\n\nWhen using the skeleton component, an aria-live level should be applied to the parent element of the skeleton and the element that it is\nrepresenting so that any changes, such as the real element replacing the skeleton placeholder, are announced to assistive technology like screen readers. The recommendation is to use aria-live=\"polite\" over aria-live=\"recommended\" unless changes are critically important. \n",
+      "docs": "When using the skeleton component, an aria-live level should be applied to the parent element of the skeleton and the element that it is\nrepresenting so that any changes, such as the real element replacing the skeleton placeholder, are announced to assistive technology like screen readers. The recommendation is to use aria-live=\"polite\" over aria-live=\"recommended\" unless changes are critically important.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -14043,7 +15508,7 @@
       "filePath": "src/components/ic-status-tag/ic-status-tag.tsx",
       "encapsulation": "shadow",
       "tag": "ic-status-tag",
-      "readme": "# ic-status-tag\r\n\r\n\r\n\r",
+      "readme": "# ic-status-tag\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -14289,7 +15754,7 @@
       "filePath": "src/components/ic-step/ic-step.tsx",
       "encapsulation": "shadow",
       "tag": "ic-step",
-      "readme": "# ic-step\r\n\r\n\r\n\r",
+      "readme": "# ic-step\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -14435,7 +15900,7 @@
       "filePath": "src/components/ic-stepper/ic-stepper.tsx",
       "encapsulation": "shadow",
       "tag": "ic-stepper",
-      "readme": "# ic-stepper\r\n\r\nThis is a wrapper component to be placed around one or more ic-step components\r\n\r",
+      "readme": "# ic-stepper\n\nThis is a wrapper component to be placed around one or more ic-step components\n",
       "docs": "This is a wrapper component to be placed around one or more ic-step components",
       "docsTags": [],
       "usage": {},
@@ -14592,7 +16057,7 @@
       "filePath": "src/components/ic-switch/ic-switch.tsx",
       "encapsulation": "shadow",
       "tag": "ic-switch",
-      "readme": "# ic-switch\r\n\r\n\r\n\r",
+      "readme": "# ic-switch\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -14941,7 +16406,7 @@
       "filePath": "src/components/ic-tab/ic-tab.tsx",
       "encapsulation": "shadow",
       "tag": "ic-tab",
-      "readme": "# ic-tab\r\n\r\n\r\n\r",
+      "readme": "# ic-tab\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -15030,7 +16495,7 @@
       "filePath": "src/components/ic-tab-context/ic-tab-context.tsx",
       "encapsulation": "none",
       "tag": "ic-tab-context",
-      "readme": "# ic-tab-context\r\n\r\n\r\n\r",
+      "readme": "# ic-tab-context\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -15227,7 +16692,7 @@
       "filePath": "src/components/ic-tab-group/ic-tab-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-tab-group",
-      "readme": "# ic-tab-group\r\n\r\n\r\n\r",
+      "readme": "# ic-tab-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -15337,7 +16802,7 @@
       "filePath": "src/components/ic-tab-panel/ic-tab-panel.tsx",
       "encapsulation": "shadow",
       "tag": "ic-tab-panel",
-      "readme": "# ic-tab-panel\r\n\r\n\r\n\r",
+      "readme": "# ic-tab-panel\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -15385,7 +16850,7 @@
       "filePath": "src/components/ic-text-field/ic-text-field.tsx",
       "encapsulation": "shadow",
       "tag": "ic-text-field",
-      "readme": "# ic-textfield\r\n\r\n\r\n\r",
+      "readme": "# ic-textfield\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -15441,10 +16906,10 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"name\" | \"on\" | \"off\" | \"additional-name\" | \"address-level1\" | \"address-level2\" | \"address-level3\" | \"address-level4\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-family-name\" | \"cc-given-name\" | \"cc-name\" | \"cc-number\" | \"cc-type\" | \"country\" | \"country-name\" | \"current-password\" | \"family-name\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"new-password\" | \"one-time-code\" | \"organization\" | \"postal-code\" | \"street-address\" | \"transaction-amount\" | \"transaction-currency\" | \"username\" | \"email\" | \"tel\" | \"tel-area-code\" | \"tel-country-code\" | \"tel-extension\" | \"tel-local\" | \"tel-national\" | \"nickname\" | \"organization-title\" | \"cc-additional-name\" | \"language\" | \"bday\" | \"sex\" | \"impp\" | \"url\" | \"photo\"",
+          "type": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
           "complexType": {
             "original": "IcAutocompleteTypes",
-            "resolved": "\"name\" | \"on\" | \"off\" | \"additional-name\" | \"address-level1\" | \"address-level2\" | \"address-level3\" | \"address-level4\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"cc-csc\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-family-name\" | \"cc-given-name\" | \"cc-name\" | \"cc-number\" | \"cc-type\" | \"country\" | \"country-name\" | \"current-password\" | \"family-name\" | \"given-name\" | \"honorific-prefix\" | \"honorific-suffix\" | \"new-password\" | \"one-time-code\" | \"organization\" | \"postal-code\" | \"street-address\" | \"transaction-amount\" | \"transaction-currency\" | \"username\" | \"email\" | \"tel\" | \"tel-area-code\" | \"tel-country-code\" | \"tel-extension\" | \"tel-local\" | \"tel-national\" | \"nickname\" | \"organization-title\" | \"cc-additional-name\" | \"language\" | \"bday\" | \"sex\" | \"impp\" | \"url\" | \"photo\"",
+            "resolved": "\"name\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
             "references": {
               "IcAutocompleteTypes": {
                 "location": "import",
@@ -15473,23 +16938,59 @@
               "type": "string"
             },
             {
+              "value": "honorific-prefix",
+              "type": "string"
+            },
+            {
+              "value": "given-name",
+              "type": "string"
+            },
+            {
               "value": "additional-name",
               "type": "string"
             },
             {
-              "value": "address-level1",
+              "value": "family-name",
               "type": "string"
             },
             {
-              "value": "address-level2",
+              "value": "honorific-suffix",
               "type": "string"
             },
             {
-              "value": "address-level3",
+              "value": "nickname",
               "type": "string"
             },
             {
-              "value": "address-level4",
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "username",
+              "type": "string"
+            },
+            {
+              "value": "new-password",
+              "type": "string"
+            },
+            {
+              "value": "current-password",
+              "type": "string"
+            },
+            {
+              "value": "one-time-code",
+              "type": "string"
+            },
+            {
+              "value": "organization-title",
+              "type": "string"
+            },
+            {
+              "value": "organization",
+              "type": "string"
+            },
+            {
+              "value": "street-address",
               "type": "string"
             },
             {
@@ -15505,19 +17006,51 @@
               "type": "string"
             },
             {
-              "value": "bday-day",
+              "value": "address-level4",
               "type": "string"
             },
             {
-              "value": "bday-month",
+              "value": "address-level3",
               "type": "string"
             },
             {
-              "value": "bday-year",
+              "value": "address-level2",
               "type": "string"
             },
             {
-              "value": "cc-csc",
+              "value": "address-level1",
+              "type": "string"
+            },
+            {
+              "value": "country",
+              "type": "string"
+            },
+            {
+              "value": "country-name",
+              "type": "string"
+            },
+            {
+              "value": "postal-code",
+              "type": "string"
+            },
+            {
+              "value": "cc-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-given-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-additional-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-family-name",
+              "type": "string"
+            },
+            {
+              "value": "cc-number",
               "type": "string"
             },
             {
@@ -15533,19 +17066,7 @@
               "type": "string"
             },
             {
-              "value": "cc-family-name",
-              "type": "string"
-            },
-            {
-              "value": "cc-given-name",
-              "type": "string"
-            },
-            {
-              "value": "cc-name",
-              "type": "string"
-            },
-            {
-              "value": "cc-number",
+              "value": "cc-csc",
               "type": "string"
             },
             {
@@ -15553,103 +17074,11 @@
               "type": "string"
             },
             {
-              "value": "country",
-              "type": "string"
-            },
-            {
-              "value": "country-name",
-              "type": "string"
-            },
-            {
-              "value": "current-password",
-              "type": "string"
-            },
-            {
-              "value": "family-name",
-              "type": "string"
-            },
-            {
-              "value": "given-name",
-              "type": "string"
-            },
-            {
-              "value": "honorific-prefix",
-              "type": "string"
-            },
-            {
-              "value": "honorific-suffix",
-              "type": "string"
-            },
-            {
-              "value": "new-password",
-              "type": "string"
-            },
-            {
-              "value": "one-time-code",
-              "type": "string"
-            },
-            {
-              "value": "organization",
-              "type": "string"
-            },
-            {
-              "value": "postal-code",
-              "type": "string"
-            },
-            {
-              "value": "street-address",
-              "type": "string"
-            },
-            {
-              "value": "transaction-amount",
-              "type": "string"
-            },
-            {
               "value": "transaction-currency",
               "type": "string"
             },
             {
-              "value": "username",
-              "type": "string"
-            },
-            {
-              "value": "email",
-              "type": "string"
-            },
-            {
-              "value": "tel",
-              "type": "string"
-            },
-            {
-              "value": "tel-area-code",
-              "type": "string"
-            },
-            {
-              "value": "tel-country-code",
-              "type": "string"
-            },
-            {
-              "value": "tel-extension",
-              "type": "string"
-            },
-            {
-              "value": "tel-local",
-              "type": "string"
-            },
-            {
-              "value": "tel-national",
-              "type": "string"
-            },
-            {
-              "value": "nickname",
-              "type": "string"
-            },
-            {
-              "value": "organization-title",
-              "type": "string"
-            },
-            {
-              "value": "cc-additional-name",
+              "value": "transaction-amount",
               "type": "string"
             },
             {
@@ -15661,7 +17090,43 @@
               "type": "string"
             },
             {
+              "value": "bday-day",
+              "type": "string"
+            },
+            {
+              "value": "bday-month",
+              "type": "string"
+            },
+            {
+              "value": "bday-year",
+              "type": "string"
+            },
+            {
               "value": "sex",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "tel-country-code",
+              "type": "string"
+            },
+            {
+              "value": "tel-national",
+              "type": "string"
+            },
+            {
+              "value": "tel-area-code",
+              "type": "string"
+            },
+            {
+              "value": "tel-local",
+              "type": "string"
+            },
+            {
+              "value": "tel-extension",
               "type": "string"
             },
             {
@@ -16561,6 +18026,7 @@
       ],
       "parts": [],
       "dependents": [
+        "ic-pagination-bar",
         "ic-search-bar"
       ],
       "dependencies": [
@@ -16584,6 +18050,9 @@
         "ic-input-validation": [
           "ic-typography"
         ],
+        "ic-pagination-bar": [
+          "ic-text-field"
+        ],
         "ic-search-bar": [
           "ic-text-field"
         ]
@@ -16593,7 +18062,7 @@
       "filePath": "src/components/ic-theme/ic-theme.tsx",
       "encapsulation": "shadow",
       "tag": "ic-theme",
-      "readme": "# ic-theme\r\n\r\n\r\n\r",
+      "readme": "# ic-theme\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -16647,7 +18116,7 @@
       "filePath": "src/components/ic-toast/ic-toast.tsx",
       "encapsulation": "shadow",
       "tag": "ic-toast",
-      "readme": "# ic-toast\r\n\r\n\r\n\r",
+      "readme": "# ic-toast\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -16886,7 +18355,13 @@
           "passive": true
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-toast",
+          "annotation": "prop",
+          "docs": "z-index of toast"
+        }
+      ],
       "slots": [
         {
           "name": "action",
@@ -16926,7 +18401,7 @@
       "filePath": "src/components/ic-toast-region/ic-toast-region.tsx",
       "encapsulation": "none",
       "tag": "ic-toast-region",
-      "readme": "# ic-toast-region\r\n\r\n\r\n\r",
+      "readme": "# ic-toast-region\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -17026,7 +18501,7 @@
       "filePath": "src/components/ic-toggle-button/ic-toggle-button.tsx",
       "encapsulation": "shadow",
       "tag": "ic-toggle-button",
-      "readme": "# ic-toggle-button\r\n\r\n\r\n\r",
+      "readme": "# ic-toggle-button\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -17362,7 +18837,7 @@
       "filePath": "src/components/ic-toggle-button-group/ic-toggle-button-group.tsx",
       "encapsulation": "shadow",
       "tag": "ic-toggle-button-group",
-      "readme": "# ic-toggle-button-group\r\n\r\n\r\n\r",
+      "readme": "# ic-toggle-button-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -17694,7 +19169,7 @@
       "filePath": "src/components/ic-tooltip/ic-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "ic-tooltip",
-      "readme": "# ic-tooltip\r\n\r\n\r\n\r",
+      "readme": "# ic-tooltip\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -17915,7 +19390,13 @@
       ],
       "events": [],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--ic-z-index-tooltip",
+          "annotation": "prop",
+          "docs": "z-index of tooltip"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [
@@ -17923,7 +19404,9 @@
         "ic-button",
         "ic-card",
         "ic-chip",
-        "ic-navigation-item"
+        "ic-data-table",
+        "ic-navigation-item",
+        "ic-pagination-bar"
       ],
       "dependencies": [
         "ic-typography"
@@ -17944,7 +19427,13 @@
         "ic-chip": [
           "ic-tooltip"
         ],
+        "ic-data-table": [
+          "ic-tooltip"
+        ],
         "ic-navigation-item": [
+          "ic-tooltip"
+        ],
+        "ic-pagination-bar": [
           "ic-tooltip"
         ]
       }
@@ -17953,7 +19442,7 @@
       "filePath": "src/components/ic-top-navigation/ic-top-navigation.tsx",
       "encapsulation": "shadow",
       "tag": "ic-top-navigation",
-      "readme": "# ic-top-navigation\r\n\r\n\r\n\r",
+      "readme": "# ic-top-navigation\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -18312,7 +19801,7 @@
       "filePath": "src/components/ic-typography/ic-typography.tsx",
       "encapsulation": "shadow",
       "tag": "ic-typography",
-      "readme": "# ic-typography\r\n\r\n\r\n\r",
+      "readme": "# ic-typography\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -18391,7 +19880,7 @@
             "resolved": "number",
             "references": {}
           },
-          "mutable": false,
+          "mutable": true,
           "attr": "max-lines",
           "reflectToAttr": false,
           "docs": "The number of lines to display before truncating the text, only used for the 'body' variant.",
@@ -18556,6 +20045,8 @@
         "ic-classification-banner",
         "ic-data-entity",
         "ic-data-row",
+        "ic-data-table",
+        "ic-data-table-title-bar",
         "ic-dialog",
         "ic-empty-state",
         "ic-footer",
@@ -18571,6 +20062,7 @@
         "ic-navigation-item",
         "ic-navigation-menu",
         "ic-page-header",
+        "ic-pagination-bar",
         "ic-pagination-item",
         "ic-popover-menu",
         "ic-radio-option",
@@ -18620,6 +20112,12 @@
         "ic-data-row": [
           "ic-typography"
         ],
+        "ic-data-table": [
+          "ic-typography"
+        ],
+        "ic-data-table-title-bar": [
+          "ic-typography"
+        ],
         "ic-dialog": [
           "ic-typography"
         ],
@@ -18663,6 +20161,9 @@
           "ic-typography"
         ],
         "ic-page-header": [
+          "ic-typography"
+        ],
+        "ic-pagination-bar": [
           "ic-typography"
         ],
         "ic-pagination-item": [
@@ -18853,10 +20354,70 @@
       "docstring": "",
       "path": "src/utils/types.ts"
     },
+    "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableColumnObject": {
+      "declaration": "{\n  key: string;\n  title: string;\n  dataType: IcDataTableColumnDataTypes;\n  columnAlignment?: {\n    horizontal?: string;\n    vertical?: string;\n  };\n  rowOptions?: IcDataTableRowOptions;\n  textWrap?: boolean;\n  cellAlignment?: string;\n  emphasis?: string;\n  colspan?: number;\n  icon?: {\n    icon: string;\n    onAllCells?: boolean;\n    hideOnHeader?: boolean;\n  };\n}",
+      "docstring": "",
+      "path": "src/components/ic-data-table/ic-data-table.types.tsx"
+    },
+    "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableDensityOptions": {
+      "declaration": "export type IcDataTableDensityOptions = \"default\" | \"dense\" | \"spacious\";",
+      "docstring": "",
+      "path": "src/components/ic-data-table/ic-data-table.types.tsx"
+    },
+    "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableRowHeights": {
+      "declaration": "export type IcDataTableRowHeights = number | \"auto\";",
+      "docstring": "",
+      "path": "src/components/ic-data-table/ic-data-table.types.tsx"
+    },
+    "src/utils/types.ts::IcPaginationBarOptions": {
+      "declaration": "export interface IcPaginationBarOptions {\n  itemsPerPageOptions?: { label: string; value: string }[];\n  rangeLabelType?: IcPaginationLabelTypes;\n  type?: IcPaginationTypes;\n  showItemsPerPageControl?: boolean;\n  showGoToPageControl?: boolean;\n  alignment?: IcPaginationAlignmentOptions;\n  appearance?: IcThemeForeground;\n  itemLabel?: string;\n  pageLabel?: string;\n  hideRangeLabel?: boolean;\n}",
+      "docstring": "",
+      "path": "src/utils/types.ts"
+    },
+    "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableSortOrderOptions": {
+      "declaration": "export type IcDataTableSortOrderOptions =\n  | \"unsorted\"\n  | \"ascending\"\n  | \"descending\";",
+      "docstring": "",
+      "path": "src/components/ic-data-table/ic-data-table.types.tsx"
+    },
+    "src/components/ic-data-table/ic-data-table.types.tsx::IcDataTableTruncationTypes": {
+      "declaration": "export type IcDataTableTruncationTypes = \"tooltip\" | \"show-hide\" | undefined;",
+      "docstring": "",
+      "path": "src/components/ic-data-table/ic-data-table.types.tsx"
+    },
+    "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationTypes": {
+      "declaration": "export type IcPaginationTypes = \"simple\" | \"complex\";",
+      "docstring": "",
+      "path": "src/components/ic-pagination/ic-pagination.types.ts"
+    },
+    "src/components/ic-pagination/ic-pagination.types.ts::IcChangeEventDetail": {
+      "declaration": "export interface IcChangeEventDetail {\n  value: number;\n}",
+      "docstring": "",
+      "path": "src/components/ic-pagination/ic-pagination.types.ts"
+    },
+    "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationAlignmentOptions": {
+      "declaration": "export type IcPaginationAlignmentOptions = \"left\" | \"right\" | \"space-between\";",
+      "docstring": "",
+      "path": "src/components/ic-pagination/ic-pagination.types.ts"
+    },
+    "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationLabelTypes": {
+      "declaration": "export type IcPaginationLabelTypes = \"page\" | \"data\";",
+      "docstring": "",
+      "path": "src/components/ic-pagination/ic-pagination.types.ts"
+    },
+    "src/components/ic-pagination-item/ic-pagination-item.types.ts::IcPaginationItemType": {
+      "declaration": "export type IcPaginationItemType = \"page\" | \"ellipsis\" | \"simple-current\";",
+      "docstring": "",
+      "path": "src/components/ic-pagination-item/ic-pagination-item.types.ts"
+    },
     "src/components/ic-empty-state/ic-empty-state.types.ts::IcEmptyStateAlignment": {
       "declaration": "export type IcEmptyStateAlignment = \"left\" | \"center\" | \"right\";",
       "docstring": "",
       "path": "src/components/ic-empty-state/ic-empty-state.types.ts"
+    },
+    "src/components/ic-data-table/ic-data-table.types.tsx::IcDensityUpdateEventDetail": {
+      "declaration": "export interface IcDensityUpdateEventDetail {\n  value: IcDataTableDensityOptions;\n}",
+      "docstring": "",
+      "path": "src/components/ic-data-table/ic-data-table.types.tsx"
     },
     "src/utils/types.ts::IcTypographyVariants": {
       "declaration": "export type IcTypographyVariants =\n  | \"h1\"\n  | \"h2\"\n  | \"h3\"\n  | \"h4\"\n  | \"subtitle-large\"\n  | \"subtitle-small\"\n  | \"body\"\n  | \"label\"\n  | \"label-uppercase\"\n  | \"caption\"\n  | \"caption-uppercase\"\n  | \"code-large\"\n  | \"code-small\"\n  | \"code-extra-small\"\n  | \"badge\"\n  | \"badge-small\";",
@@ -18928,20 +20489,10 @@
       "docstring": "",
       "path": "src/utils/types.ts"
     },
-    "src/components/ic-pagination/ic-pagination.types.ts::IcPaginationTypes": {
-      "declaration": "export type IcPaginationTypes = \"simple\" | \"complex\";",
+    "src/utils/types.ts::IcSearchMatchPositions": {
+      "declaration": "export type IcSearchMatchPositions = \"start\" | \"anywhere\";",
       "docstring": "",
-      "path": "src/components/ic-pagination/ic-pagination.types.ts"
-    },
-    "src/components/ic-pagination/ic-pagination.types.ts::IcChangeEventDetail": {
-      "declaration": "export interface IcChangeEventDetail {\n  value: number;\n}",
-      "docstring": "",
-      "path": "src/components/ic-pagination/ic-pagination.types.ts"
-    },
-    "src/components/ic-pagination-item/ic-pagination-item.types.ts::IcPaginationItemType": {
-      "declaration": "export type IcPaginationItemType = \"page\" | \"ellipsis\" | \"simple-current\";",
-      "docstring": "",
-      "path": "src/components/ic-pagination-item/ic-pagination-item.types.ts"
+      "path": "src/utils/types.ts"
     },
     "src/utils/types.ts::IcOrientation": {
       "declaration": "export type IcOrientation = \"horizontal\" | \"vertical\";",
@@ -18960,11 +20511,6 @@
     },
     "src/utils/types.ts::IcBlurEventDetail": {
       "declaration": "export interface IcBlurEventDetail {\n  relatedTarget: IcRelatedTarget;\n}",
-      "docstring": "",
-      "path": "src/utils/types.ts"
-    },
-    "src/utils/types.ts::IcSearchMatchPositions": {
-      "declaration": "export type IcSearchMatchPositions = \"start\" | \"anywhere\";",
       "docstring": "",
       "path": "src/utils/types.ts"
     },

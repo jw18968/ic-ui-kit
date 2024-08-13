@@ -86,6 +86,7 @@ Type: `Promise<void>`
 
  - [ic-accordion-group](../ic-accordion-group)
  - [ic-alert](../ic-alert)
+ - [ic-data-table](../ic-data-table)
  - [ic-dialog](../ic-dialog)
  - [ic-horizontal-scroll](../ic-horizontal-scroll)
  - [ic-menu](../ic-menu)
@@ -93,6 +94,7 @@ Type: `Promise<void>`
  - [ic-navigation-button](../ic-navigation-button)
  - [ic-navigation-menu](../ic-navigation-menu)
  - [ic-pagination](../ic-pagination)
+ - [ic-pagination-bar](../ic-pagination-bar)
  - [ic-search-bar](../ic-search-bar)
  - [ic-select](../ic-select)
  - [ic-side-navigation](../ic-side-navigation)
@@ -114,6 +116,7 @@ graph TD;
   ic-tooltip --> ic-typography
   ic-accordion-group --> ic-button
   ic-alert --> ic-button
+  ic-data-table --> ic-button
   ic-dialog --> ic-button
   ic-horizontal-scroll --> ic-button
   ic-menu --> ic-button
@@ -121,6 +124,7 @@ graph TD;
   ic-navigation-button --> ic-button
   ic-navigation-menu --> ic-button
   ic-pagination --> ic-button
+  ic-pagination-bar --> ic-button
   ic-search-bar --> ic-button
   ic-select --> ic-button
   ic-side-navigation --> ic-button

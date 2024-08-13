@@ -33,6 +33,8 @@
  - [ic-classification-banner](../ic-classification-banner)
  - [ic-data-entity](../ic-data-entity)
  - [ic-data-row](../ic-data-row)
+ - [ic-data-table](../ic-data-table)
+ - [ic-data-table-title-bar](../ic-data-table-title-bar)
  - [ic-dialog](../ic-dialog)
  - [ic-empty-state](../ic-empty-state)
  - [ic-footer](../ic-footer)
@@ -48,6 +50,7 @@
  - [ic-navigation-item](../ic-navigation-item)
  - [ic-navigation-menu](../ic-navigation-menu)
  - [ic-page-header](../ic-page-header)
+ - [ic-pagination-bar](../ic-pagination-bar)
  - [ic-pagination-item](../ic-pagination-item)
  - [ic-popover-menu](../ic-popover-menu)
  - [ic-radio-option](../ic-radio-option)
@@ -76,6 +79,8 @@ graph TD;
   ic-classification-banner --> ic-typography
   ic-data-entity --> ic-typography
   ic-data-row --> ic-typography
+  ic-data-table --> ic-typography
+  ic-data-table-title-bar --> ic-typography
   ic-dialog --> ic-typography
   ic-empty-state --> ic-typography
   ic-footer --> ic-typography
@@ -91,6 +96,7 @@ graph TD;
   ic-navigation-item --> ic-typography
   ic-navigation-menu --> ic-typography
   ic-page-header --> ic-typography
+  ic-pagination-bar --> ic-typography
   ic-pagination-item --> ic-typography
   ic-popover-menu --> ic-typography
   ic-radio-option --> ic-typography

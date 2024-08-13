@@ -51,7 +51,9 @@ Type: `Promise<void>`
  - [ic-button](../ic-button)
  - [ic-card](../ic-card)
  - [ic-chip](../ic-chip)
+ - [ic-data-table](../ic-data-table)
  - [ic-navigation-item](../ic-navigation-item)
+ - [ic-pagination-bar](../ic-pagination-bar)
 
 ### Depends on
 
@@ -65,7 +67,9 @@ graph TD;
   ic-button --> ic-tooltip
   ic-card --> ic-tooltip
   ic-chip --> ic-tooltip
+  ic-data-table --> ic-tooltip
   ic-navigation-item --> ic-tooltip
+  ic-pagination-bar --> ic-tooltip
   style ic-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

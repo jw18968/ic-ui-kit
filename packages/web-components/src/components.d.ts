@@ -5,13 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcColor, IcDeviceSizes, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSelectMethodTypes, IcSelectTypes, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
+import { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcColor, IcDeviceSizes, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcPaginationBarOptions, IcSearchMatchPositions, IcSelectMethodTypes, IcSelectTypes, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
 import { IcBackToTopVariants } from "./components/ic-back-to-top/ic-back-to-top.types";
 import { IcBadgePositions, IcBadgeTypes, IcBadgeVariants } from "./components/ic-badge/ic-badge.types";
 import { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 import { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
 import { IcChipAppearance } from "./components/ic-chip/ic-chip.types";
 import { IcProtectiveMarkings } from "./components/ic-classification-banner/ic-classification-banner.types";
+import { IcDataTableColumnObject, IcDataTableDensityOptions, IcDataTableRowHeights, IcDataTableSortOrderOptions, IcDataTableTruncationTypes, IcDensityUpdateEventDetail } from "./components/ic-data-table/ic-data-table.types";
 import { IcEmptyStateAlignment } from "./components/ic-empty-state/ic-empty-state.types";
 import { IcFooterBreakpoints } from "./components/ic-footer/ic-footer.types";
 import { IcHeroContentAlignments } from "./components/ic-hero/ic-hero.types";
@@ -20,7 +21,7 @@ import { IcLoadingSizes, IcLoadingTypes } from "./components/ic-loading-indicato
 import { IcSearchBarBlurEventDetail, IcSearchBarSearchModes } from "./components/ic-search-bar/ic-search-bar.types";
 import { IcMenuChangeEventDetail, IcMenuOptionIdEventDetail, IcOptionSelectEventDetail } from "./components/ic-menu/ic-menu.types";
 import { IcMenuItemVariants } from "./components/ic-menu-item/ic-menu-item.types";
-import { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
+import { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationAlignmentOptions, IcPaginationLabelTypes, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 import { IcPaginationItemType } from "./components/ic-pagination-item/ic-pagination-item.types";
 import { IcChangeEventDetail as IcChangeEventDetail2 } from "./components/ic-radio-group/ic-radio-group.types";
 import { IcExpandedDetail } from "./components/ic-side-navigation/ic-side-navigation.types";
@@ -33,13 +34,15 @@ import { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-t
 import { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 import { IcChangeEventDetail as IcChangeEventDetail3 } from "./components/ic-toggle-button-group/ic-toggle-button-group.types";
 import { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
-export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcColor, IcDeviceSizes, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSelectMethodTypes, IcSelectTypes, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
+import { Options } from "@popperjs/core";
+export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcColor, IcDeviceSizes, IcEmphasisType, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcPaginationBarOptions, IcSearchMatchPositions, IcSelectMethodTypes, IcSelectTypes, IcSizes, IcSizesNoLarge, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
 export { IcBackToTopVariants } from "./components/ic-back-to-top/ic-back-to-top.types";
 export { IcBadgePositions, IcBadgeTypes, IcBadgeVariants } from "./components/ic-badge/ic-badge.types";
 export { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 export { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
 export { IcChipAppearance } from "./components/ic-chip/ic-chip.types";
 export { IcProtectiveMarkings } from "./components/ic-classification-banner/ic-classification-banner.types";
+export { IcDataTableColumnObject, IcDataTableDensityOptions, IcDataTableRowHeights, IcDataTableSortOrderOptions, IcDataTableTruncationTypes, IcDensityUpdateEventDetail } from "./components/ic-data-table/ic-data-table.types";
 export { IcEmptyStateAlignment } from "./components/ic-empty-state/ic-empty-state.types";
 export { IcFooterBreakpoints } from "./components/ic-footer/ic-footer.types";
 export { IcHeroContentAlignments } from "./components/ic-hero/ic-hero.types";
@@ -48,7 +51,7 @@ export { IcLoadingSizes, IcLoadingTypes } from "./components/ic-loading-indicato
 export { IcSearchBarBlurEventDetail, IcSearchBarSearchModes } from "./components/ic-search-bar/ic-search-bar.types";
 export { IcMenuChangeEventDetail, IcMenuOptionIdEventDetail, IcOptionSelectEventDetail } from "./components/ic-menu/ic-menu.types";
 export { IcMenuItemVariants } from "./components/ic-menu-item/ic-menu-item.types";
-export { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
+export { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationAlignmentOptions, IcPaginationLabelTypes, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 export { IcPaginationItemType } from "./components/ic-pagination-item/ic-pagination-item.types";
 export { IcChangeEventDetail as IcChangeEventDetail2 } from "./components/ic-radio-group/ic-radio-group.types";
 export { IcExpandedDetail } from "./components/ic-side-navigation/ic-side-navigation.types";
@@ -61,6 +64,7 @@ export { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-t
 export { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 export { IcChangeEventDetail as IcChangeEventDetail3 } from "./components/ic-toggle-button-group/ic-toggle-button-group.types";
 export { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
+export { Options } from "@popperjs/core";
 export namespace Components {
     interface IcAccordion {
         "appearance"?: IcThemeForeground;
@@ -628,6 +632,131 @@ export namespace Components {
           * The value of the middle (right if no end-component supplied) cell of the row.
          */
         "value": string;
+    }
+    interface IcDataTable {
+        /**
+          * The title for the table only visible to screen readers.
+         */
+        "caption": string;
+        /**
+          * The column headers for the table.
+         */
+        "columns": IcDataTableColumnObject[];
+        /**
+          * The row content for the table.
+         */
+        "data": { [key: string]: any }[];
+        /**
+          * Set the density of the table including font and padding.
+         */
+        "density"?: IcDataTableDensityOptions;
+        /**
+          * Applies a border to the table container.
+         */
+        "embedded"?: boolean;
+        /**
+          * Sets the row height on all rows in the table that aren't set using the `variableRowHeight` method.
+         */
+        "globalRowHeight"?: IcDataTableRowHeights;
+        /**
+          * If `true`, column headers will not be visible.
+         */
+        "hideColumnHeaders"?: boolean;
+        /**
+          * When set to `true`, the full table will show a loading state, featuring a radial indicator.
+         */
+        "loading"?: boolean;
+        /**
+          * Sets the props for the circular loading indicator used in the loading state.
+         */
+        "loadingOptions"?: {
+    appearance?: IcThemeForegroundNoDefault;
+    description?: string;
+    label?: string;
+    labelDuration?: number;
+    max?: number;
+    min?: number;
+    progress?: number;
+    showBackground?: boolean;
+  };
+        /**
+          * The minimum amount of time the `loading` state displays for before showing the data. Used to prevent flashing in the component.
+         */
+        "minimumLoadingDisplayDuration"?: number;
+        /**
+          * Sets the props for the built-in pagination bar. If the `pagination-bar` slot is used then this prop is ignored.
+         */
+        "paginationBarOptions"?: IcPaginationBarOptions;
+        /**
+          * Resets the `globalRowHeight` prop to number or auto and sets the `variableRowHeight` prop to `null`.
+         */
+        "resetRowHeights": (rowHeight?: number | "auto") => Promise<void>;
+        /**
+          * If `true`, adds a pagination bar to the bottom of the table.
+         */
+        "showPagination"?: boolean;
+        /**
+          * Sets the order columns will be sorted in and allows for 'default' sorts to be added.
+         */
+        "sortOptions"?: {
+    sortOrders: IcDataTableSortOrderOptions[];
+    defaultColumn?: string;
+  };
+        /**
+          * If `true`, allows table columns to be sorted using applied sort buttons.
+         */
+        "sortable"?: boolean;
+        /**
+          * If `true`, column headers will remain at the top of the table when scrolling vertically.
+         */
+        "stickyColumnHeaders"?: boolean;
+        /**
+          * If `true`, row headers will remain to the left when scrolling horizontally.
+         */
+        "stickyRowHeaders"?: boolean;
+        /**
+          * Sets the method used to truncate longer text in cells where textWrap is `false`. The `tooltip` truncation pattern allows the overflowing text to be seen in a tooltip. The `showHide` truncation pattern allows the overflowing text to be shown and hidden using the ic-typography "See more"/"See less" buttons.
+         */
+        "truncationPattern"?: IcDataTableTruncationTypes;
+        /**
+          * If `true`, the table displays a linear loading indicator below the header row to indicate an updating state.
+         */
+        "updating"?: boolean;
+        /**
+          * Sets the props for the linear loading indicator used in the updating state.
+         */
+        "updatingOptions"?: {
+    appearance?: IcThemeForegroundNoDefault;
+    description?: string;
+    max?: number;
+    min?: number;
+    progress?: number;
+  };
+        /**
+          * Allows for custom setting of row heights on individual rows based on an individual value from the `data` prop and the row index. If the function returns `null`, that row's height will be set to the `globalRowHeight` property.
+         */
+        "variableRowHeight"?: (params: {
+    [key: string]: any;
+    index: number;
+  }) => IcDataTableRowHeights | null;
+    }
+    interface IcDataTableTitleBar {
+        /**
+          * The description that is displayed below the `heading` and `metadata`. Can be overridden with the `description` slot.
+         */
+        "description"?: string;
+        /**
+          * The heading of the title bar. Can be overridden with the `heading` slot. If used with an `ic-data-table` it will default to the table's `caption` unless overridden.
+         */
+        "heading"?: string;
+        /**
+          * When `true`, the density select will not be rendered.
+         */
+        "hideDensitySelect"?: boolean;
+        /**
+          * The metadata displayed next to the `heading`.
+         */
+        "metadata"?: string;
     }
     interface IcDialog {
         /**
@@ -1344,6 +1473,55 @@ export namespace Components {
           * The type of pagination to be used.
          */
         "type": IcPaginationTypes;
+    }
+    interface IcPaginationBar {
+        /**
+          * Sets the alignment of the items in the pagination bar.
+         */
+        "alignment"?: IcPaginationAlignmentOptions;
+        /**
+          * Sets the styling for the items in the pagination bar.
+         */
+        "appearance"?: IcThemeForeground;
+        /**
+          * If `true`, the number of total items and current item range or number of total pages and current page will be hidden.
+         */
+        "hideRangeLabel"?: boolean;
+        /**
+          * The text which will be used in place of 'Item' on the pagination bar.
+         */
+        "itemLabel"?: string;
+        /**
+          * The options which will be displayed for 'items per page' select input. Set a maximum of 4 options including a required 'All' option with value equal to total number of items.
+         */
+        "itemsPerPageOptions"?: {
+    label: string;
+    value: string;
+  }[];
+        /**
+          * The text which will be used in place of 'Page' on the pagination bar.
+         */
+        "pageLabel"?: string;
+        /**
+          * Whether total number of items and current item range or total number of pages and current page is displayed.
+         */
+        "rangeLabelType"?: IcPaginationLabelTypes;
+        /**
+          * If `true`, the 'go to page' control should be displayed.
+         */
+        "showGoToPageControl"?: boolean;
+        /**
+          * If `true`, the select input to control 'items per page' should be displayed.
+         */
+        "showItemsPerPageControl"?: boolean;
+        /**
+          * Total number of items to be displayed across all pages.
+         */
+        "totalItems": number;
+        /**
+          * Whether the displayed pagination is simple or complex.
+         */
+        "type"?: IcPaginationTypes;
     }
     interface IcPaginationItem {
         /**
@@ -2323,6 +2501,10 @@ export namespace Components {
           * The position of the tooltip in relation to the parent element.
          */
         "placement"?: IcTooltipPlacements;
+        /**
+          * @param props object - createPopper props set externally
+         */
+        "setExternalPopperProps": <T extends Partial<Options>>(props: T) => Promise<void>;
         "silent"?: boolean;
         /**
           * The ID of the element the tooltip is describing - for when aria-labelledby or aria-describedby is used.
@@ -2373,6 +2555,10 @@ export namespace Components {
          */
         "bold"?: boolean;
         /**
+          * @param height - text container height
+         */
+        "checkMaxLines": (height: number) => Promise<void>;
+        /**
           * If `true`, the typography will have an italic font style.
          */
         "italic"?: boolean;
@@ -2380,6 +2566,8 @@ export namespace Components {
           * The number of lines to display before truncating the text, only used for the 'body' variant.
          */
         "maxLines"?: number;
+        "resetTruncation": () => Promise<void>;
+        "setShowHideExpanded": (expanded: boolean) => Promise<void>;
         /**
           * If `true`, the typography will have a line through it.
          */
@@ -2418,6 +2606,14 @@ export interface IcChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcChipElement;
 }
+export interface IcDataTableCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcDataTableElement;
+}
+export interface IcDataTableTitleBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcDataTableTitleBarElement;
+}
 export interface IcDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcDialogElement;
@@ -2445,6 +2641,10 @@ export interface IcNavigationMenuCustomEvent<T> extends CustomEvent<T> {
 export interface IcPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcPaginationElement;
+}
+export interface IcPaginationBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcPaginationBarElement;
 }
 export interface IcPaginationItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2513,6 +2713,10 @@ export interface IcToggleButtonGroupCustomEvent<T> extends CustomEvent<T> {
 export interface IcTopNavigationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcTopNavigationElement;
+}
+export interface IcTypographyCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcTypographyElement;
 }
 declare global {
     interface HTMLIcAccordionElementEventMap {
@@ -2675,6 +2879,40 @@ declare global {
     var HTMLIcDataRowElement: {
         prototype: HTMLIcDataRowElement;
         new (): HTMLIcDataRowElement;
+    };
+    interface HTMLIcDataTableElementEventMap {
+        "icRowHeightChange": void;
+    }
+    interface HTMLIcDataTableElement extends Components.IcDataTable, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIcDataTableElementEventMap>(type: K, listener: (this: HTMLIcDataTableElement, ev: IcDataTableCustomEvent<HTMLIcDataTableElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIcDataTableElementEventMap>(type: K, listener: (this: HTMLIcDataTableElement, ev: IcDataTableCustomEvent<HTMLIcDataTableElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIcDataTableElement: {
+        prototype: HTMLIcDataTableElement;
+        new (): HTMLIcDataTableElement;
+    };
+    interface HTMLIcDataTableTitleBarElementEventMap {
+        "icTableDensityUpdate": IcDensityUpdateEventDetail;
+    }
+    interface HTMLIcDataTableTitleBarElement extends Components.IcDataTableTitleBar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIcDataTableTitleBarElementEventMap>(type: K, listener: (this: HTMLIcDataTableTitleBarElement, ev: IcDataTableTitleBarCustomEvent<HTMLIcDataTableTitleBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIcDataTableTitleBarElementEventMap>(type: K, listener: (this: HTMLIcDataTableTitleBarElement, ev: IcDataTableTitleBarCustomEvent<HTMLIcDataTableTitleBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIcDataTableTitleBarElement: {
+        prototype: HTMLIcDataTableTitleBarElement;
+        new (): HTMLIcDataTableTitleBarElement;
     };
     interface HTMLIcDialogElementEventMap {
         "icDialogCancelled": void;
@@ -2906,6 +3144,24 @@ declare global {
     var HTMLIcPaginationElement: {
         prototype: HTMLIcPaginationElement;
         new (): HTMLIcPaginationElement;
+    };
+    interface HTMLIcPaginationBarElementEventMap {
+        "icPageChange": { value: number };
+        "icItemsPerPageChange": { value: number };
+    }
+    interface HTMLIcPaginationBarElement extends Components.IcPaginationBar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIcPaginationBarElementEventMap>(type: K, listener: (this: HTMLIcPaginationBarElement, ev: IcPaginationBarCustomEvent<HTMLIcPaginationBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIcPaginationBarElementEventMap>(type: K, listener: (this: HTMLIcPaginationBarElement, ev: IcPaginationBarCustomEvent<HTMLIcPaginationBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIcPaginationBarElement: {
+        prototype: HTMLIcPaginationBarElement;
+        new (): HTMLIcPaginationBarElement;
     };
     interface HTMLIcPaginationItemElementEventMap {
         "paginationItemClick": { page: number };
@@ -3283,7 +3539,21 @@ declare global {
         prototype: HTMLIcTopNavigationElement;
         new (): HTMLIcTopNavigationElement;
     };
+    interface HTMLIcTypographyElementEventMap {
+        "typographyTruncationExpandToggle": {
+    expanded: boolean;
+    typographyEl: HTMLIcTypographyElement;
+  };
+    }
     interface HTMLIcTypographyElement extends Components.IcTypography, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIcTypographyElementEventMap>(type: K, listener: (this: HTMLIcTypographyElement, ev: IcTypographyCustomEvent<HTMLIcTypographyElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIcTypographyElementEventMap>(type: K, listener: (this: HTMLIcTypographyElement, ev: IcTypographyCustomEvent<HTMLIcTypographyElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIcTypographyElement: {
         prototype: HTMLIcTypographyElement;
@@ -3305,6 +3575,8 @@ declare global {
         "ic-classification-banner": HTMLIcClassificationBannerElement;
         "ic-data-entity": HTMLIcDataEntityElement;
         "ic-data-row": HTMLIcDataRowElement;
+        "ic-data-table": HTMLIcDataTableElement;
+        "ic-data-table-title-bar": HTMLIcDataTableTitleBarElement;
         "ic-dialog": HTMLIcDialogElement;
         "ic-divider": HTMLIcDividerElement;
         "ic-empty-state": HTMLIcEmptyStateElement;
@@ -3328,6 +3600,7 @@ declare global {
         "ic-navigation-menu": HTMLIcNavigationMenuElement;
         "ic-page-header": HTMLIcPageHeaderElement;
         "ic-pagination": HTMLIcPaginationElement;
+        "ic-pagination-bar": HTMLIcPaginationBarElement;
         "ic-pagination-item": HTMLIcPaginationItemElement;
         "ic-popover-menu": HTMLIcPopoverMenuElement;
         "ic-radio-group": HTMLIcRadioGroupElement;
@@ -3928,6 +4201,135 @@ declare namespace LocalJSX {
           * The value of the middle (right if no end-component supplied) cell of the row.
          */
         "value"?: string;
+    }
+    interface IcDataTable {
+        /**
+          * The title for the table only visible to screen readers.
+         */
+        "caption": string;
+        /**
+          * The column headers for the table.
+         */
+        "columns": IcDataTableColumnObject[];
+        /**
+          * The row content for the table.
+         */
+        "data"?: { [key: string]: any }[];
+        /**
+          * Set the density of the table including font and padding.
+         */
+        "density"?: IcDataTableDensityOptions;
+        /**
+          * Applies a border to the table container.
+         */
+        "embedded"?: boolean;
+        /**
+          * Sets the row height on all rows in the table that aren't set using the `variableRowHeight` method.
+         */
+        "globalRowHeight"?: IcDataTableRowHeights;
+        /**
+          * If `true`, column headers will not be visible.
+         */
+        "hideColumnHeaders"?: boolean;
+        /**
+          * When set to `true`, the full table will show a loading state, featuring a radial indicator.
+         */
+        "loading"?: boolean;
+        /**
+          * Sets the props for the circular loading indicator used in the loading state.
+         */
+        "loadingOptions"?: {
+    appearance?: IcThemeForegroundNoDefault;
+    description?: string;
+    label?: string;
+    labelDuration?: number;
+    max?: number;
+    min?: number;
+    progress?: number;
+    showBackground?: boolean;
+  };
+        /**
+          * The minimum amount of time the `loading` state displays for before showing the data. Used to prevent flashing in the component.
+         */
+        "minimumLoadingDisplayDuration"?: number;
+        /**
+          * Emitted when the `globalRowHeight` or `variableRowHeight` properties change in the data table.
+         */
+        "onIcRowHeightChange"?: (event: IcDataTableCustomEvent<void>) => void;
+        /**
+          * Sets the props for the built-in pagination bar. If the `pagination-bar` slot is used then this prop is ignored.
+         */
+        "paginationBarOptions"?: IcPaginationBarOptions;
+        /**
+          * If `true`, adds a pagination bar to the bottom of the table.
+         */
+        "showPagination"?: boolean;
+        /**
+          * Sets the order columns will be sorted in and allows for 'default' sorts to be added.
+         */
+        "sortOptions"?: {
+    sortOrders: IcDataTableSortOrderOptions[];
+    defaultColumn?: string;
+  };
+        /**
+          * If `true`, allows table columns to be sorted using applied sort buttons.
+         */
+        "sortable"?: boolean;
+        /**
+          * If `true`, column headers will remain at the top of the table when scrolling vertically.
+         */
+        "stickyColumnHeaders"?: boolean;
+        /**
+          * If `true`, row headers will remain to the left when scrolling horizontally.
+         */
+        "stickyRowHeaders"?: boolean;
+        /**
+          * Sets the method used to truncate longer text in cells where textWrap is `false`. The `tooltip` truncation pattern allows the overflowing text to be seen in a tooltip. The `showHide` truncation pattern allows the overflowing text to be shown and hidden using the ic-typography "See more"/"See less" buttons.
+         */
+        "truncationPattern"?: IcDataTableTruncationTypes;
+        /**
+          * If `true`, the table displays a linear loading indicator below the header row to indicate an updating state.
+         */
+        "updating"?: boolean;
+        /**
+          * Sets the props for the linear loading indicator used in the updating state.
+         */
+        "updatingOptions"?: {
+    appearance?: IcThemeForegroundNoDefault;
+    description?: string;
+    max?: number;
+    min?: number;
+    progress?: number;
+  };
+        /**
+          * Allows for custom setting of row heights on individual rows based on an individual value from the `data` prop and the row index. If the function returns `null`, that row's height will be set to the `globalRowHeight` property.
+         */
+        "variableRowHeight"?: (params: {
+    [key: string]: any;
+    index: number;
+  }) => IcDataTableRowHeights | null;
+    }
+    interface IcDataTableTitleBar {
+        /**
+          * The description that is displayed below the `heading` and `metadata`. Can be overridden with the `description` slot.
+         */
+        "description"?: string;
+        /**
+          * The heading of the title bar. Can be overridden with the `heading` slot. If used with an `ic-data-table` it will default to the table's `caption` unless overridden.
+         */
+        "heading"?: string;
+        /**
+          * When `true`, the density select will not be rendered.
+         */
+        "hideDensitySelect"?: boolean;
+        /**
+          * The metadata displayed next to the `heading`.
+         */
+        "metadata"?: string;
+        /**
+          * Emitted when the table density select value is changed.
+         */
+        "onIcTableDensityUpdate"?: (event: IcDataTableTitleBarCustomEvent<IcDensityUpdateEventDetail>) => void;
     }
     interface IcDialog {
         /**
@@ -4634,6 +5036,63 @@ declare namespace LocalJSX {
         "pages": number;
         /**
           * The type of pagination to be used.
+         */
+        "type"?: IcPaginationTypes;
+    }
+    interface IcPaginationBar {
+        /**
+          * Sets the alignment of the items in the pagination bar.
+         */
+        "alignment"?: IcPaginationAlignmentOptions;
+        /**
+          * Sets the styling for the items in the pagination bar.
+         */
+        "appearance"?: IcThemeForeground;
+        /**
+          * If `true`, the number of total items and current item range or number of total pages and current page will be hidden.
+         */
+        "hideRangeLabel"?: boolean;
+        /**
+          * The text which will be used in place of 'Item' on the pagination bar.
+         */
+        "itemLabel"?: string;
+        /**
+          * The options which will be displayed for 'items per page' select input. Set a maximum of 4 options including a required 'All' option with value equal to total number of items.
+         */
+        "itemsPerPageOptions"?: {
+    label: string;
+    value: string;
+  }[];
+        /**
+          * Emitted when the items per page option is changed.
+         */
+        "onIcItemsPerPageChange"?: (event: IcPaginationBarCustomEvent<{ value: number }>) => void;
+        /**
+          * Emitted when a page is navigated to via the 'go to' input.
+         */
+        "onIcPageChange"?: (event: IcPaginationBarCustomEvent<{ value: number }>) => void;
+        /**
+          * The text which will be used in place of 'Page' on the pagination bar.
+         */
+        "pageLabel"?: string;
+        /**
+          * Whether total number of items and current item range or total number of pages and current page is displayed.
+         */
+        "rangeLabelType"?: IcPaginationLabelTypes;
+        /**
+          * If `true`, the 'go to page' control should be displayed.
+         */
+        "showGoToPageControl"?: boolean;
+        /**
+          * If `true`, the select input to control 'items per page' should be displayed.
+         */
+        "showItemsPerPageControl"?: boolean;
+        /**
+          * Total number of items to be displayed across all pages.
+         */
+        "totalItems": number;
+        /**
+          * Whether the displayed pagination is simple or complex.
          */
         "type"?: IcPaginationTypes;
     }
@@ -5804,6 +6263,10 @@ declare namespace LocalJSX {
           * The number of lines to display before truncating the text, only used for the 'body' variant.
          */
         "maxLines"?: number;
+        "onTypographyTruncationExpandToggle"?: (event: IcTypographyCustomEvent<{
+    expanded: boolean;
+    typographyEl: HTMLIcTypographyElement;
+  }>) => void;
         /**
           * If `true`, the typography will have a line through it.
          */
@@ -5833,6 +6296,8 @@ declare namespace LocalJSX {
         "ic-classification-banner": IcClassificationBanner;
         "ic-data-entity": IcDataEntity;
         "ic-data-row": IcDataRow;
+        "ic-data-table": IcDataTable;
+        "ic-data-table-title-bar": IcDataTableTitleBar;
         "ic-dialog": IcDialog;
         "ic-divider": IcDivider;
         "ic-empty-state": IcEmptyState;
@@ -5856,6 +6321,7 @@ declare namespace LocalJSX {
         "ic-navigation-menu": IcNavigationMenu;
         "ic-page-header": IcPageHeader;
         "ic-pagination": IcPagination;
+        "ic-pagination-bar": IcPaginationBar;
         "ic-pagination-item": IcPaginationItem;
         "ic-popover-menu": IcPopoverMenu;
         "ic-radio-group": IcRadioGroup;
@@ -5903,6 +6369,8 @@ declare module "@stencil/core" {
             "ic-classification-banner": LocalJSX.IcClassificationBanner & JSXBase.HTMLAttributes<HTMLIcClassificationBannerElement>;
             "ic-data-entity": LocalJSX.IcDataEntity & JSXBase.HTMLAttributes<HTMLIcDataEntityElement>;
             "ic-data-row": LocalJSX.IcDataRow & JSXBase.HTMLAttributes<HTMLIcDataRowElement>;
+            "ic-data-table": LocalJSX.IcDataTable & JSXBase.HTMLAttributes<HTMLIcDataTableElement>;
+            "ic-data-table-title-bar": LocalJSX.IcDataTableTitleBar & JSXBase.HTMLAttributes<HTMLIcDataTableTitleBarElement>;
             "ic-dialog": LocalJSX.IcDialog & JSXBase.HTMLAttributes<HTMLIcDialogElement>;
             "ic-divider": LocalJSX.IcDivider & JSXBase.HTMLAttributes<HTMLIcDividerElement>;
             "ic-empty-state": LocalJSX.IcEmptyState & JSXBase.HTMLAttributes<HTMLIcEmptyStateElement>;
@@ -5926,6 +6394,7 @@ declare module "@stencil/core" {
             "ic-navigation-menu": LocalJSX.IcNavigationMenu & JSXBase.HTMLAttributes<HTMLIcNavigationMenuElement>;
             "ic-page-header": LocalJSX.IcPageHeader & JSXBase.HTMLAttributes<HTMLIcPageHeaderElement>;
             "ic-pagination": LocalJSX.IcPagination & JSXBase.HTMLAttributes<HTMLIcPaginationElement>;
+            "ic-pagination-bar": LocalJSX.IcPaginationBar & JSXBase.HTMLAttributes<HTMLIcPaginationBarElement>;
             "ic-pagination-item": LocalJSX.IcPaginationItem & JSXBase.HTMLAttributes<HTMLIcPaginationItemElement>;
             "ic-popover-menu": LocalJSX.IcPopoverMenu & JSXBase.HTMLAttributes<HTMLIcPopoverMenuElement>;
             "ic-radio-group": LocalJSX.IcRadioGroup & JSXBase.HTMLAttributes<HTMLIcRadioGroupElement>;

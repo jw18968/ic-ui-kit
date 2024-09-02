@@ -1030,7 +1030,7 @@ export class DataTable {
   };
 
   private getColumnWidth = (
-    columnWidth: string | IcDataTableColumnWidthTypes
+    columnWidth?: string | IcDataTableColumnWidthTypes
   ) => {
     // TODO: Setting max width on columns
     let columnWidthStyling = {};
@@ -1580,6 +1580,10 @@ export class DataTable {
       updating,
     } = this;
 
+    const hasColumnWidth = this.columns.some((cols) =>
+      Object.keys(cols).includes("columnWidth")
+    );
+
     return (
       <Host style={{ ...this.setTableWidth() }}>
         <div class="table-container">
@@ -1593,7 +1597,11 @@ export class DataTable {
             onScroll={updateScrollOffset}
           >
             {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
-            <table>
+            <table
+              class={{
+                ["table-layout-auto"]: !!hasColumnWidth,
+              }}
+            >
               <caption class="table-caption">{caption}</caption>
               {!hideColumnHeaders && (
                 <thead

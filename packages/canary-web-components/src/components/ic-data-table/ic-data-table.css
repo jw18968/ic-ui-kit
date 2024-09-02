@@ -73,10 +73,15 @@ table {
   width: var(--column-width);
 }
 
+.column-header-inner-container {
+  padding: var(--ic-space-xs);
+}
+
 .column-header-inner-container,
 .cell-container {
-  min-width: var(--column-min-width, 4rem);
-  max-width: var(--column-max-width);
+
+  /* min-width: var(--column-min-width, 4rem);
+  max-width: var(--column-max-width); */
 }
 
 .column-header-sticky {
@@ -147,7 +152,15 @@ table {
   font-weight: var(--ic-font-weight-bold);
 }
 
-.column-header,
+.column-header{
+  text-align: left;
+  padding: 0;
+  /* padding: var(--ic-space-xs); */
+  background-color: var(--ic-architectural-40);
+  border-right: var(--ic-border-light);
+  border-bottom: var(--ic-border-light);
+}
+
 .row-header {
   text-align: left;
   padding: var(--ic-space-xs);

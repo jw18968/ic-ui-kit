@@ -11,6 +11,7 @@ import {
   Method,
   Event,
   EventEmitter,
+  Host,
 } from "@stencil/core";
 import unsortedIcon from "./assets/unsorted-icon.svg";
 import ascendingIcon from "./assets/ascending-icon.svg";
@@ -18,6 +19,7 @@ import descendingIcon from "./assets/descending-icon.svg";
 import {
   IcDataTableColumnDataTypes,
   IcDataTableColumnObject,
+  IcDataTableColumnWidthTypes,
   IcDataTableDensityOptions,
   IcDataTableRowHeights,
   IcDataTableSortOrderOptions,
@@ -33,7 +35,7 @@ import {
   isEmptyString,
   isSlotUsed,
   pxToRem,
-  debounce,
+  dynamicDebounce,
 } from "../../utils/helpers";
 
 /**
@@ -88,6 +90,7 @@ export class DataTable {
   private DEFAULT_LINE_HEIGHT = 24;
   private densityUpdate: boolean = false;
   private previousPaginationPage: number;
+  private isNewDebounceDelaySet = false;
 
   @Element() el: HTMLIcDataTableElement;
 
@@ -110,6 +113,8 @@ export class DataTable {
   @State() toRow: number;
 
   @State() currentRowHeight: number;
+
+  @State() debounceDelay = 0;
 
   /**
    * The title for the table only visible to screen readers.
@@ -220,6 +225,11 @@ export class DataTable {
    * If `true`, row headers will remain to the left when scrolling horizontally.
    */
   @Prop() stickyRowHeaders?: boolean = false;
+
+  /**
+   * Sets the table width.
+   */
+  @Prop() tableWidth?: string;
 
   /**
    * Sets the method used to truncate longer text in cells where textWrap is `false`.
@@ -548,16 +558,29 @@ export class DataTable {
         if (!cellContainer.classList.contains(this.TEXT_WRAP_STRING)) {
           this.resizeObserver = new ResizeObserver(
             // This gets triggered twice due to updated data and see more/see less button
-            debounce(() => {
-              // console.log("resizeObserver triggered");
-              this.dataTruncation(typographyEl);
-            }, 200) as ResizeObserverCallback
+            dynamicDebounce(
+              () => {
+                // console.log("resizeObserver triggered");
+                this.dataTruncation(typographyEl);
+
+                if (!this.isNewDebounceDelaySet) {
+                  this.setNewDebounceDelay(200);
+                }
+              },
+              () => this.debounceDelay
+            ) as ResizeObserverCallback
           );
 
           this.resizeObserver.observe(typographyEl);
         }
       }
     );
+  };
+
+  private setNewDebounceDelay = (delay: number) => {
+    this.debounceDelay = delay;
+
+    this.isNewDebounceDelaySet = true;
   };
 
   private getLines = (height: number): number =>
@@ -1006,6 +1029,40 @@ export class DataTable {
     return {};
   };
 
+  private getColumnWidth = (
+    columnWidth: string | IcDataTableColumnWidthTypes
+  ) => {
+    // TODO: Setting max width on columns
+    let columnWidthStyling = {};
+
+    if (columnWidth) {
+      if (typeof columnWidth === "string") {
+        columnWidthStyling = {
+          ...columnWidthStyling,
+          ["--column-width"]: columnWidth,
+        };
+      }
+
+      if (typeof columnWidth === "object" && !!Object.keys(columnWidth)) {
+        if (columnWidth?.width || columnWidth?.maxWidth) {
+          columnWidthStyling = {
+            ...columnWidthStyling,
+            ["--column-max-width"]: columnWidth?.maxWidth,
+          };
+        }
+
+        if (columnWidth?.minWidth) {
+          columnWidthStyling = {
+            ...columnWidthStyling,
+            ["--column-min-width"]: columnWidth?.minWidth,
+          };
+        }
+      }
+    }
+
+    return columnWidthStyling;
+  };
+
   private createCells = (row: object, rowIndex: number) => {
     const rowValues = Object.values(row);
     const rowKeys = Object.keys(row);
@@ -1107,6 +1164,7 @@ export class DataTable {
                   columnProps?.dataType !== "element"
                     ? this.setRowHeight(currentRowHeight)
                     : null,
+                ...this.getColumnWidth(columnProps.columnWidth),
               }}
               data-row-height={
                 this.truncationPattern || currentRowHeight
@@ -1168,64 +1226,67 @@ export class DataTable {
   };
 
   private createColumnHeaders = () => {
-    return this.columns.map(({ cellAlignment, colspan, icon, key, title }) => (
-      <th
-        scope="col"
-        class={{
-          ["column-header"]: true,
-          [`table-density-${this.density}`]: this.notDefaultDensity(),
-          ["updating-state-headers"]: this.updating && !this.loading,
-        }}
-        colSpan={colspan}
-      >
-        <div
+    return this.columns.map(
+      ({ cellAlignment, colspan, icon, key, title, columnWidth }) => (
+        <th
+          scope="col"
           class={{
-            "column-header-inner-container": true,
-            [`column-header-alignment-${cellAlignment}`]: !!cellAlignment,
+            ["column-header"]: true,
+            [`table-density-${this.density}`]: this.notDefaultDensity(),
+            ["updating-state-headers"]: this.updating && !this.loading,
           }}
+          style={{ ...this.getColumnWidth(columnWidth) }}
+          colSpan={colspan}
         >
-          {isSlotUsed(this.el, `${key}-column-icon`) ? (
-            <slot name={`${key}-column-icon`} />
-          ) : (
-            icon &&
-            !icon.hideOnHeader && (
-              <span class="icon" innerHTML={icon.icon}></span>
-            )
-          )}
-          <ic-typography
-            variant="body"
+          <div
             class={{
-              ["column-header-text"]: true,
-              [`text-${this.density}`]: this.notDefaultDensity(),
+              "column-header-inner-container": true,
+              [`column-header-alignment-${cellAlignment}`]: !!cellAlignment,
             }}
           >
-            {title}
-          </ic-typography>
-          {this.sortable && (
-            <ic-button
-              variant="icon"
-              id={`sort-button-${key}`}
-              aria-label={this.getSortButtonLabel(key)}
-              // eslint-disable-next-line react/jsx-no-bind
-              onClick={() => this.sortRows(key)}
-              innerHTML={
-                this.SORT_ICONS[
-                  this.sortedColumn === key
-                    ? this.sortedColumnOrder
-                    : "unsorted"
-                ]
-              }
+            {isSlotUsed(this.el, `${key}-column-icon`) ? (
+              <slot name={`${key}-column-icon`} />
+            ) : (
+              icon &&
+              !icon.hideOnHeader && (
+                <span class="icon" innerHTML={icon.icon}></span>
+              )
+            )}
+            <ic-typography
+              variant="body"
               class={{
-                ["sort-button"]: true,
-                ["sort-button-unsorted"]:
-                  this.sortedColumn !== key ||
-                  this.sortedColumnOrder === "unsorted",
+                ["column-header-text"]: true,
+                [`text-${this.density}`]: this.notDefaultDensity(),
               }}
-            ></ic-button>
-          )}
-        </div>
-      </th>
-    ));
+            >
+              {title}
+            </ic-typography>
+            {this.sortable && (
+              <ic-button
+                variant="icon"
+                id={`sort-button-${key}`}
+                aria-label={this.getSortButtonLabel(key)}
+                // eslint-disable-next-line react/jsx-no-bind
+                onClick={() => this.sortRows(key)}
+                innerHTML={
+                  this.SORT_ICONS[
+                    this.sortedColumn === key
+                      ? this.sortedColumnOrder
+                      : "unsorted"
+                  ]
+                }
+                class={{
+                  ["sort-button"]: true,
+                  ["sort-button-unsorted"]:
+                    this.sortedColumn !== key ||
+                    this.sortedColumnOrder === "unsorted",
+                }}
+              ></ic-button>
+            )}
+          </div>
+        </th>
+      )
+    );
   };
 
   private onRowClick = (row: object) => {
@@ -1450,6 +1511,16 @@ export class DataTable {
     }
   }
 
+  private setTableWidth = () => {
+    if (this.tableWidth) {
+      return {
+        ["--table-width"]: this.tableWidth,
+      };
+    }
+
+    return {};
+  };
+
   private removeTooltip(
     cellContainer: HTMLElement,
     typographyEl: HTMLIcTypographyElement,
@@ -1510,101 +1581,103 @@ export class DataTable {
     } = this;
 
     return (
-      <div class="table-container">
-        {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
-        <div
-          class={{
-            ["table-row-container"]: true,
-            scrollable,
-          }}
-          tabIndex={scrollable ? 0 : null}
-          onScroll={updateScrollOffset}
-        >
+      <Host style={{ ...this.setTableWidth() }}>
+        <div class="table-container">
           {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
-          <table>
-            <caption class="table-caption">{caption}</caption>
-            {!hideColumnHeaders && (
-              <thead
-                class={{
-                  ["column-header-sticky"]: stickyColumnHeaders,
-                  ["column-header-overlay"]:
-                    stickyColumnHeaders && scrollOffset !== 0,
-                }}
-              >
-                <tr>{createColumnHeaders()}</tr>
-              </thead>
-            )}
-            {updating &&
-              !loading &&
-              (hideColumnHeaders ? (
-                <thead>{createUpdatingIndicator()}</thead>
-              ) : (
-                createUpdatingIndicator()
-              ))}
-            {data?.length > 0 && !loading && <tbody>{createRows()}</tbody>}
-          </table>
-          {!data?.length &&
-            !loading &&
-            (isSlotUsed(this.el, "empty-state") ? (
-              <slot name="empty-state" />
-            ) : (
-              <ic-empty-state
-                aligned="center"
-                heading="No Data"
-                class="loading-empty"
-              ></ic-empty-state>
-            ))}
-        </div>
-        {loading && (
-          <ic-loading-indicator
-            appearance={loadingOptions?.appearance}
+          <div
             class={{
-              "loading-empty": loading,
-              loading: true,
-              "show-background": loadingOptions.showBackground,
+              ["table-row-container"]: true,
+              scrollable,
             }}
-            description={loadingOptions.description || "Loading table data"}
-            label={loadingOptions.label || "Loading..."}
-            labelDuration={loadingOptions?.labelDuration}
-            max={loadingOptions?.max}
-            min={loadingOptions?.min}
-            progress={loadingOptions?.progress}
-            ref={(el: HTMLIcLoadingIndicatorElement) =>
-              (this.loadingIndicator = el)
-            }
-          ></ic-loading-indicator>
-        )}
-        {(showPagination || isSlotUsed(this.el, "pagination-bar")) && (
-          <div class="pagination-container">
-            {isSlotUsed(this.el, "pagination-bar") ? (
-              <slot name="pagination-bar" />
-            ) : (
-              <ic-pagination-bar
-                totalItems={data.length}
-                type={paginationBarOptions.type}
-                rangeLabelType={paginationBarOptions.rangeLabelType}
-                showItemsPerPageControl={
-                  paginationBarOptions.showItemsPerPageControl
-                }
-                showGoToPageControl={paginationBarOptions.showGoToPageControl}
-                itemsPerPageOptions={paginationBarOptions.itemsPerPageOptions}
-                alignment={paginationBarOptions.alignment}
-                appearance={paginationBarOptions.appearance}
-                itemLabel={paginationBarOptions.itemLabel}
-                pageLabel={paginationBarOptions.pageLabel}
-                hideRangeLabel={paginationBarOptions.hideRangeLabel}
-              ></ic-pagination-bar>
-            )}
+            tabIndex={scrollable ? 0 : null}
+            onScroll={updateScrollOffset}
+          >
+            {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
+            <table>
+              <caption class="table-caption">{caption}</caption>
+              {!hideColumnHeaders && (
+                <thead
+                  class={{
+                    ["column-header-sticky"]: stickyColumnHeaders,
+                    ["column-header-overlay"]:
+                      stickyColumnHeaders && scrollOffset !== 0,
+                  }}
+                >
+                  <tr>{createColumnHeaders()}</tr>
+                </thead>
+              )}
+              {updating &&
+                !loading &&
+                (hideColumnHeaders ? (
+                  <thead>{createUpdatingIndicator()}</thead>
+                ) : (
+                  createUpdatingIndicator()
+                ))}
+              {data?.length > 0 && !loading && <tbody>{createRows()}</tbody>}
+            </table>
+            {!data?.length &&
+              !loading &&
+              (isSlotUsed(this.el, "empty-state") ? (
+                <slot name="empty-state" />
+              ) : (
+                <ic-empty-state
+                  aligned="center"
+                  heading="No Data"
+                  class="loading-empty"
+                ></ic-empty-state>
+              ))}
           </div>
-        )}
-        {sortable && (
-          <div class="screen-reader-sort-text" aria-live="polite">
-            {sortedColumnOrder !== "unsorted" && sortedColumn
-              ? `${sortedColumn} sorted ${sortedColumnOrder}`
-              : "table unsorted"}
-          </div>
-        )}
-      </div>
+          {loading && (
+            <ic-loading-indicator
+              appearance={loadingOptions?.appearance}
+              class={{
+                "loading-empty": loading,
+                loading: true,
+                "show-background": loadingOptions.showBackground,
+              }}
+              description={loadingOptions.description || "Loading table data"}
+              label={loadingOptions.label || "Loading..."}
+              labelDuration={loadingOptions?.labelDuration}
+              max={loadingOptions?.max}
+              min={loadingOptions?.min}
+              progress={loadingOptions?.progress}
+              ref={(el: HTMLIcLoadingIndicatorElement) =>
+                (this.loadingIndicator = el)
+              }
+            ></ic-loading-indicator>
+          )}
+          {(showPagination || isSlotUsed(this.el, "pagination-bar")) && (
+            <div class="pagination-container">
+              {isSlotUsed(this.el, "pagination-bar") ? (
+                <slot name="pagination-bar" />
+              ) : (
+                <ic-pagination-bar
+                  totalItems={data.length}
+                  type={paginationBarOptions.type}
+                  rangeLabelType={paginationBarOptions.rangeLabelType}
+                  showItemsPerPageControl={
+                    paginationBarOptions.showItemsPerPageControl
+                  }
+                  showGoToPageControl={paginationBarOptions.showGoToPageControl}
+                  itemsPerPageOptions={paginationBarOptions.itemsPerPageOptions}
+                  alignment={paginationBarOptions.alignment}
+                  appearance={paginationBarOptions.appearance}
+                  itemLabel={paginationBarOptions.itemLabel}
+                  pageLabel={paginationBarOptions.pageLabel}
+                  hideRangeLabel={paginationBarOptions.hideRangeLabel}
+                ></ic-pagination-bar>
+              )}
+            </div>
+          )}
+          {sortable && (
+            <div class="screen-reader-sort-text" aria-live="polite">
+              {sortedColumnOrder !== "unsorted" && sortedColumn
+                ? `${sortedColumn} sorted ${sortedColumnOrder}`
+                : "table unsorted"}
+            </div>
+          )}
+        </div>
+      </Host>
     );
   }
 }

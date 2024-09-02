@@ -12,6 +12,12 @@ export type IcDataTableColumnDataTypes =
   | "element"
   | "date";
 
+export type IcDataTableColumnWidthTypes = {
+  width?: string;
+  minWidth?: string;
+  maxWidth?: string;
+};
+
 export type IcDataTableColumnObject = {
   key: string;
   title: string;
@@ -20,6 +26,7 @@ export type IcDataTableColumnObject = {
     horizontal?: string;
     vertical?: string;
   };
+  columnWidth?: string | IcDataTableColumnWidthTypes;
   rowOptions?: IcDataTableRowOptions;
   textWrap?: boolean;
   cellAlignment?: string;

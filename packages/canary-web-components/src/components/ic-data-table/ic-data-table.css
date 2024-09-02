@@ -3,6 +3,7 @@
   display: block;
   height: 100%;
   max-height: 100%;
+  width: var(--table-width, 100%);
 }
 
 tbody {
@@ -12,27 +13,17 @@ tbody {
 .table-container {
   position: relative;
   height: calc(100% - var(--ic-space-xxxs));
-  display: flex;
-  flex-direction: column;
 }
 
 .cell-container {
-  display: flex;
   min-height: 1.5rem;
   overflow-y: hidden;
-}
-
-.truncation-show-hide {
-  overflow: visible;
-  display: block;
-}
-
-.cell-icon.truncation-show-hide {
   display: flex;
+  height: var(--row-height);
 }
 
-.cell-container:not(.data-type-element, .truncation-show-hide) {
-  overflow-x: hidden;
+.cell-container:not(.data-type-element) {
+  overflow: hidden;
 }
 
 ic-loading-indicator {
@@ -53,9 +44,17 @@ ic-loading-indicator {
 }
 
 table {
-  table-layout: fixed;
   border-spacing: 0;
   width: 100%;
+  table-layout: fixed;
+}
+
+.table-layout-fixed {
+  table-layout: fixed;
+}
+
+.table-layout-auto {
+  table-layout: auto;
 }
 
 .table-row-container:focus {
@@ -68,6 +67,16 @@ table {
 
 :host([embedded="true"]) .table-row-container {
   border: var(--ic-border-light);
+}
+
+.column-header {
+  width: var(--column-width);
+}
+
+.column-header-inner-container,
+.cell-container {
+  min-width: var(--column-min-width, 4rem);
+  max-width: var(--column-max-width);
 }
 
 .column-header-sticky {

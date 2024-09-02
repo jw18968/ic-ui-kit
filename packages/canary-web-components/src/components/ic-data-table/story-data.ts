@@ -49,6 +49,39 @@ export const COLS: IcDataTableColumnObject[] = [
   },
 ];
 
+export const COLS_WIDTH: IcDataTableColumnObject[] = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    // columnWidth: '12.5rem'
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+    columnWidth: {
+      minWidth: '50px',
+      maxWidth: '200px',
+    }
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
 export const VERY_LONG_DATA = (rows: number = 100) => {
   const nextData = [];
   for (let i = 0; i < rows; i++) {
@@ -863,6 +896,14 @@ export const createDataTableElement = (
 export const Basic = (): HTMLIcDataTableElement => {
   const dataTable = createDataTableElement("Basic Table");
   dataTable.setAttribute("sortable", "true");
+  return dataTable;
+};
+
+export const ColumnWidth = (): HTMLIcDataTableElement => {
+  const dataTable = createDataTableElement("Basic Table", COLS_WIDTH, DATA);
+  // dataTable.tableWidth = '400px';
+  // dataTable.setAttribute("truncation-pattern", "tooltip");
+  // dataTable.setAttribute("global-row-height", "40");
   return dataTable;
 };
 

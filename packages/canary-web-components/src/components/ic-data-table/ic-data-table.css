@@ -20,6 +20,8 @@ tbody {
   overflow-y: hidden;
   display: flex;
   height: var(--row-height);
+  /* width: var(--column-width); */
+  /* width: calc(var(--column-width) - (var(--ic-space-xs) * 2)); */
 }
 
 .cell-container:not(.data-type-element) {
@@ -45,7 +47,7 @@ ic-loading-indicator {
 
 table {
   border-spacing: 0;
-  width: 100%;
+  width: var(--table-width, 100%);
   table-layout: fixed;
 }
 
@@ -71,18 +73,15 @@ table {
 
 .column-header {
   width: var(--column-width);
+  min-width: var(--column-min-width);
+  max-width: var(--column-max-width);
 }
 
 .column-header-inner-container {
   padding: var(--ic-space-xs);
+  box-sizing: border-box;
 }
 
-.column-header-inner-container,
-.cell-container {
-
-  /* min-width: var(--column-min-width, 4rem);
-  max-width: var(--column-max-width); */
-}
 
 .column-header-sticky {
   position: sticky;
@@ -219,6 +218,8 @@ table {
   padding: var(--ic-space-xs);
   border-bottom: solid var(--ic-architectural-100) var(--ic-space-1px);
   overflow: hidden;
+  box-sizing: border-box;
+  max-width: var(--column-max-width);
 }
 
 .data-type-string,

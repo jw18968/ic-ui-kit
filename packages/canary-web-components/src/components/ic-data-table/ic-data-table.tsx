@@ -414,7 +414,7 @@ export class DataTable {
             rowHeight > cellContainer.clientHeight
           ) {
             cellContainer.style.setProperty(
-              "height",
+              "--row-height",
               cellContainer.getAttribute(this.DATA_ROW_HEIGHT_STRING)
             );
           }
@@ -518,7 +518,7 @@ export class DataTable {
         parseFloat(cellContainer.getAttribute(this.DATA_ROW_HEIGHT_STRING));
 
       if (typographyEl.scrollHeight > rowHeight) {
-        cellContainer.style.removeProperty("height");
+        cellContainer.style.removeProperty("--row-height");
       }
     } else {
       this.getTypographyElements().forEach(
@@ -530,7 +530,7 @@ export class DataTable {
             parseFloat(cellContainer.getAttribute(this.DATA_ROW_HEIGHT_STRING));
 
           if (typographyEl.scrollHeight > rowHeight) {
-            cellContainer.style.removeProperty("height");
+            cellContainer.style.removeProperty("--row-height");
           }
         }
       );
@@ -548,7 +548,7 @@ export class DataTable {
     );
     typographyEl.setShowHideExpanded(false);
 
-    cellContainer.style.height = null;
+    cellContainer.style.setProperty("--row-height", null);
   }
 
   private debounceDataTruncation = () => {
@@ -560,7 +560,6 @@ export class DataTable {
             // This gets triggered twice due to updated data and see more/see less button
             dynamicDebounce(
               () => {
-                // console.log("resizeObserver triggered");
                 this.dataTruncation(typographyEl);
 
                 if (!this.isNewDebounceDelaySet) {
@@ -717,8 +716,8 @@ export class DataTable {
     const { expanded, typographyEl } = detail;
     const cellContainer = this.getCellContainer(typographyEl);
 
-    if (cellContainer.style.height && expanded) {
-      cellContainer.style.height = "inherit";
+    if (cellContainer.style.getPropertyValue("--row-height") && expanded) {
+      cellContainer.style.setProperty("--row-height", "inherit");
     }
   }
 
@@ -896,11 +895,11 @@ export class DataTable {
         );
         typographyEl.setShowHideExpanded(false);
 
-        cellContainer.style.height = null;
+        cellContainer.style.setProperty("--row-height", null);
       } else {
         typographyEl.resetTruncation().then(() => {
           cellContainer.style.setProperty(
-            "height",
+            "--row-height",
             cellContainer.getAttribute(this.DATA_ROW_HEIGHT_STRING)
           );
         });
@@ -911,7 +910,7 @@ export class DataTable {
 
         typographyEl.resetTruncation().then(() => {
           cellContainer.style.setProperty(
-            "height",
+            "--row-height",
             cellContainer.getAttribute(this.DATA_ROW_HEIGHT_STRING)
           );
         });
@@ -1063,6 +1062,27 @@ export class DataTable {
     return columnWidthStyling;
   };
 
+  getRowHeight = (
+    currentRowHeight: number,
+    columnProps: IcDataTableColumnObject,
+    rowTextWrap: boolean,
+    cell: any
+  ) => {
+    if (
+      (this.truncationPattern || currentRowHeight) &&
+      !columnProps?.textWrap &&
+      !rowTextWrap &&
+      !this.getCellOptions(cell, "textWrap") &&
+      columnProps?.dataType !== "element"
+    ) {
+      return {
+        ["--row-height"]: this.setRowHeight(currentRowHeight),
+      };
+    }
+
+    return {};
+  };
+
   private createCells = (row: object, rowIndex: number) => {
     const rowValues = Object.values(row);
     const rowKeys = Object.keys(row);
@@ -1119,6 +1139,7 @@ export class DataTable {
               ["table-cell"]: true,
               [`table-density-${this.density}`]: this.notDefaultDensity(),
             }}
+            style={{ ...this.getColumnWidth(columnProps.columnWidth) }}
           >
             <div
               innerHTML={
@@ -1156,15 +1177,13 @@ export class DataTable {
                 ...this.setTruncationClass(),
               }}
               style={{
-                height:
-                  (this.truncationPattern || currentRowHeight) &&
-                  !columnProps.textWrap &&
-                  !rowOptions.textWrap &&
-                  !this.getCellOptions(cell, "textWrap") &&
-                  columnProps?.dataType !== "element"
-                    ? this.setRowHeight(currentRowHeight)
-                    : null,
-                ...this.getColumnWidth(columnProps.columnWidth),
+                ...this.getRowHeight(
+                  currentRowHeight,
+                  columnProps,
+                  rowOptions?.textWrap,
+                  cell
+                ),
+                ...this.getColumnWidth(columnProps?.columnWidth),
               }}
               data-row-height={
                 this.truncationPattern || currentRowHeight
@@ -1484,6 +1503,7 @@ export class DataTable {
         tooltip.setAttribute("target", typographyEl.id);
         tooltip.setAttribute("label", typographyEl.textContent);
       } else {
+        console.log("4");
         this.removeTooltip(cellContainer, typographyEl, tooltip);
       }
       if (removeTooltipOnly) {
@@ -1580,12 +1600,8 @@ export class DataTable {
       updating,
     } = this;
 
-    const hasColumnWidth = this.columns.some((cols) =>
-      Object.keys(cols).includes("columnWidth")
-    );
-
     return (
-      <Host style={{ ...this.setTableWidth() }}>
+      <Host>
         <div class="table-container">
           {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
           <div
@@ -1597,11 +1613,7 @@ export class DataTable {
             onScroll={updateScrollOffset}
           >
             {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
-            <table
-              class={{
-                ["table-layout-auto"]: !!hasColumnWidth,
-              }}
-            >
+            <table style={{ ...this.setTableWidth() }}>
               <caption class="table-caption">{caption}</caption>
               {!hideColumnHeaders && (
                 <thead

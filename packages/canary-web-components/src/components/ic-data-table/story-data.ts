@@ -54,30 +54,31 @@ export const COLS_WIDTH: IcDataTableColumnObject[] = [
     key: "firstName",
     title: "First name",
     dataType: "string",
-    columnWidth: '400px',
-    // columnWidth: {
-    //   minWidth: '400px'
-    // }
+    // columnWidth: '400px',
+    columnWidth: {
+      minWidth: '5%'
+    },
   },
   {
     key: "lastName",
     title: "Last name",
     dataType: "string",
-    columnWidth: '250px'
+    columnWidth: '10%'
     // columnWidth: {
-    //   maxWidth: '400px'
+    //   maxWidth: '500px'
     // }
   },
   {
     key: "age",
     title: "Age",
     dataType: "number",
-    columnWidth: '100px'
+    columnWidth: '10%'
   },
   {
     key: "jobTitle",
     title: "Job title",
     dataType: "string",
+    // columnWidth: '300px',
   },
   {
     key: "address",
@@ -905,10 +906,10 @@ export const Basic = (): HTMLIcDataTableElement => {
 
 export const ColumnWidth = (): HTMLIcDataTableElement => {
   const dataTable = createDataTableElement("Basic Table", COLS_WIDTH, DATA);
-  // dataTable.tableWidth = '400px';
-  dataTable.setAttribute("table-layout", "auto");
-  // dataTable.setAttribute("truncation-pattern", "tooltip");
-  // dataTable.setAttribute("global-row-height", "40");
+  // dataTable.setAttribute("table-layout", "auto");
+  // dataTable.setAttribute('table-width', '50%');
+  dataTable.setAttribute("truncation-pattern", "tooltip");
+  dataTable.setAttribute("global-row-height", "40");
   return dataTable;
 };
 

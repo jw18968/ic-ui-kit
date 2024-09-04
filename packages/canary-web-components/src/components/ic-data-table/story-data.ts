@@ -55,9 +55,9 @@ export const COLS_WIDTH: IcDataTableColumnObject[] = [
     title: "First name",
     dataType: "string",
     // columnWidth: '400px',
-    columnWidth: {
-      minWidth: '5%'
-    },
+    // columnWidth: {
+    //   minWidth: '5%'
+    // },
   },
   {
     key: "lastName",
@@ -72,7 +72,7 @@ export const COLS_WIDTH: IcDataTableColumnObject[] = [
     key: "age",
     title: "Age",
     dataType: "number",
-    columnWidth: '10%'
+    // columnWidth: '10%'
   },
   {
     key: "jobTitle",
@@ -906,8 +906,7 @@ export const Basic = (): HTMLIcDataTableElement => {
 
 export const ColumnWidth = (): HTMLIcDataTableElement => {
   const dataTable = createDataTableElement("Basic Table", COLS_WIDTH, DATA);
-  // dataTable.setAttribute("table-layout", "auto");
-  // dataTable.setAttribute('table-width', '50%');
+  // dataTable.setAttribute('table-width', '50rem');
   dataTable.setAttribute("truncation-pattern", "tooltip");
   dataTable.setAttribute("global-row-height", "40");
   return dataTable;

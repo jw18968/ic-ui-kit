@@ -2957,6 +2957,21 @@ describe("IcDataTable with truncation", () => {
   });
 });
 
+describe("IcDataTable column width", () => {
+  beforeEach(() => {
+    cy.injectAxe();
+    cy.viewport(1024, 768);
+  });
+
+  afterEach(() => {
+    cy.task("generateReport");
+  });
+
+  it("should set the column width to the correct px when table width is 100%", () => {});
+  it("should set the column width to the correct % when table width is 100%", () => {});
+  it("should set the column width to the correct rem when table width is 100%", () => {});
+});
+
 // This test needs to be last as it seems to affect other tests.
 // For example, it will remove the last column for the remaining tests if placed higher.
 describe("IcDataTable row deletion", () => {

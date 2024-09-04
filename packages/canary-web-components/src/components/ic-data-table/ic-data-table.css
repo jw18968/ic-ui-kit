@@ -20,7 +20,8 @@ tbody {
   overflow-y: hidden;
   display: flex;
   height: var(--row-height);
-  /* width: var(--column-width); */
+  /* Useful for when table-layout: auto */
+  /* width: var(--column-width);  */
   /* width: calc(var(--column-width) - (var(--ic-space-xs) * 2)); */
 }
 

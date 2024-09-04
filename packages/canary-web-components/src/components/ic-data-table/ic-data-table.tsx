@@ -232,6 +232,11 @@ export class DataTable {
   @Prop() tableWidth?: string;
 
   /**
+   * Sets the table layout.
+   */
+  // @Prop() tableLayout?: 'fixed' | 'auto' = 'auto';
+
+  /**
    * Sets the method used to truncate longer text in cells where textWrap is `false`.
    * The `tooltip` truncation pattern allows the overflowing text to be seen in a tooltip. The `show-hide` truncation pattern allows the overflowing text to be shown and hidden using the ic-typography "See more" / "See less" buttons.
    */
@@ -1613,7 +1618,14 @@ export class DataTable {
             onScroll={updateScrollOffset}
           >
             {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
-            <table style={{ ...this.setTableWidth() }}>
+            <table
+              style={{ ...this.setTableWidth() }}
+              // class={{
+              //   [`table-layout-${
+              //     this.tableWidth.includes("px") ? "auto" : "fixed"
+              //   }`]: true,
+              // }}
+            >
               <caption class="table-caption">{caption}</caption>
               {!hideColumnHeaders && (
                 <thead

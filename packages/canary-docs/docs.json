@@ -809,27 +809,6 @@
           "required": false
         },
         {
-          "name": "tableWidth",
-          "type": "string",
-          "complexType": {
-            "original": "string",
-            "resolved": "string",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "table-width",
-          "reflectToAttr": false,
-          "docs": "Sets the table width.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "truncationPattern",
           "type": "\"show-hide\" | \"tooltip\"",
           "complexType": {
@@ -930,6 +909,27 @@
           "values": [
             {
               "type": "(params: { [key: string]: any; index: number; }) => IcDataTableRowHeights"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Sets the table width.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": true,

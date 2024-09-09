@@ -172,6 +172,10 @@ export namespace Components {
     [key: string]: any;
     index: number;
   }) => IcDataTableRowHeights | null;
+        /**
+          * Sets the table width.
+         */
+        "width"?: string;
     }
     interface IcDataTableTitleBar {
         /**
@@ -1085,6 +1089,10 @@ declare namespace LocalJSX {
     [key: string]: any;
     index: number;
   }) => IcDataTableRowHeights | null;
+        /**
+          * Sets the table width.
+         */
+        "width"?: string;
     }
     interface IcDataTableTitleBar {
         /**

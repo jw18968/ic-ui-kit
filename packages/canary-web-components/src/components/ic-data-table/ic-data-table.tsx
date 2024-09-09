@@ -229,7 +229,7 @@ export class DataTable {
   /**
    * Sets the table width.
    */
-  @Prop() tableWidth?: string;
+  @Prop() width?: string;
 
   /**
    * Sets the table layout.
@@ -1537,9 +1537,9 @@ export class DataTable {
   }
 
   private setTableWidth = () => {
-    if (this.tableWidth) {
+    if (this.width) {
       return {
-        ["--table-width"]: this.tableWidth,
+        ["--table-width"]: this.width,
       };
     }
 
@@ -1618,14 +1618,7 @@ export class DataTable {
             onScroll={updateScrollOffset}
           >
             {isSlotUsed(this.el, "title-bar") && <slot name="title-bar" />}
-            <table
-              style={{ ...this.setTableWidth() }}
-              // class={{
-              //   [`table-layout-${
-              //     this.tableWidth.includes("px") ? "auto" : "fixed"
-              //   }`]: true,
-              // }}
-            >
+            <table style={{ ...this.setTableWidth() }}>
               <caption class="table-caption">{caption}</caption>
               {!hideColumnHeaders && (
                 <thead

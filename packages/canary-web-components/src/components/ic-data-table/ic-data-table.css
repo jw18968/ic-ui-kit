@@ -13,6 +13,8 @@ tbody {
 .table-container {
   position: relative;
   height: calc(100% - var(--ic-space-xxxs));
+  display: flex;
+  flex-direction: column;
 }
 
 .cell-container {
@@ -83,7 +85,6 @@ table {
   box-sizing: border-box;
 }
 
-
 .column-header-sticky {
   position: sticky;
   top: 0;
@@ -132,7 +133,8 @@ table {
   color: var(--ic-color-tertiary-text);
 }
 
-.table-density-dense {
+.table-density-dense .column-header-inner-container,
+td.table-density-dense {
   padding: var(--ic-space-xxs) var(--ic-space-xs) !important;
 }
 
@@ -140,7 +142,8 @@ table {
   font-size: var(--ic-font-size-label);
 }
 
-.table-density-spacious {
+.table-density-spacious .column-header-inner-container,
+td.table-density-spacious {
   padding: 0.625rem var(--ic-space-xs) !important;
 }
 
@@ -221,6 +224,7 @@ table {
   overflow: hidden;
   box-sizing: border-box;
   max-width: var(--column-max-width);
+  min-width: var(--column-min-width);
 }
 
 .data-type-string,

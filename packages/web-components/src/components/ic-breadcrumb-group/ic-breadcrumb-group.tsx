@@ -105,6 +105,8 @@ export class BreadcrumbGroup {
   private setBackBreadcrumb = () => {
     if (this.backBreadcrumbOnly) {
       this.setBackBreadcrumbAttr();
+    } else {
+      this.revertLastParentCollapsedBreadcrumb();
     }
   };
 

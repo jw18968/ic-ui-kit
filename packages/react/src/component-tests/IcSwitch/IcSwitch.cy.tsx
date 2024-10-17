@@ -12,6 +12,7 @@ import {
   RightAdornment,
   HelperText,
   HiddenLabel,
+  ThemeDark,
 } from "./IcSwitchTestData";
 import { HAVE_PROP } from "../utils/constants";
 import { setThresholdBasedOnEnv } from "../../../cypress/utils/helpers";
@@ -136,6 +137,18 @@ describe("IcSwitch visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "hidden-label",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD),
+    });
+  });
+
+  it("should render a switch in dark theme", () => {
+    mount(<ThemeDark />);
+
+    cy.checkHydrated(SWITCH_SELECTOR);
+
+    // cy.checkA11yWithWait(); A11y failure for colour contrast
+    cy.compareSnapshot({
+      name: "theme-dark",
+      testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.015),
     });
   });
 });

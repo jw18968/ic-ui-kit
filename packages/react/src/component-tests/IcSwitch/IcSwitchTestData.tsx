@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { IcButton, IcSwitch } from "../../components";
+import { IcButton, IcSwitch, IcTypography } from "../../components";
 
 export const Controlled = () => {
   const [checked, setChecked] = useState(true);
@@ -115,6 +115,24 @@ export const HiddenLabel = () => {
   return (
     <div style={{ padding: "10px" }}>
       <IcSwitch label="Label" hideLabel />
+    </div>
+  );
+};
+
+export const ThemeDark = () => {
+  return (
+    <div
+      style={{
+        padding: "10px",
+        display: "flex",
+        gap: "10px",
+        backgroundColor: "black",
+      }}
+    >
+      <IcSwitch label="Label" theme="dark" />
+      <IcSwitch label="Label" checked theme="dark" />
+      <IcSwitch label="Label" disabled theme="dark" />
+      <IcSwitch label="Label" disabled checked theme="dark" />
     </div>
   );
 };

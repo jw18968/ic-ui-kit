@@ -63,7 +63,6 @@ export { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
 export { Options } from "@popperjs/core";
 export namespace Components {
     interface IcAccordion {
-        "appearance"?: IcThemeForeground;
         /**
           * If `true`, the accordion will be disabled.
          */
@@ -88,16 +87,16 @@ export namespace Components {
           * The size of the accordion.
          */
         "size"?: IcSizes;
+        /**
+          * Sets the theme color to the dark or light theme color. "inherit" will set the color based on the system settings or ic-theme component.
+         */
+        "theme"?: IcThemeMode;
     }
     interface IcAccordionGroup {
         /**
           * The accessible button label to provide more context to the 'See all/Hide all' button for screen reader users.
          */
         "accessibleButtonLabel": string;
-        /**
-          * The appearance of the accordion group, e.g dark, or light.
-         */
-        "appearance": IcThemeForeground;
         /**
           * If `true`, the accordion will load in an expanded state.
          */
@@ -118,6 +117,10 @@ export namespace Components {
           * The size of the accordion.
          */
         "size"?: IcSizes;
+        /**
+          * Sets the theme color to the dark or light theme color. "inherit" will set the color based on the system settings or ic-theme component.
+         */
+        "theme"?: IcThemeMode;
     }
     interface IcAlert {
         /**
@@ -3277,7 +3280,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IcAccordion {
-        "appearance"?: IcThemeForeground;
         /**
           * If `true`, the accordion will be disabled.
          */
@@ -3299,16 +3301,16 @@ declare namespace LocalJSX {
           * The size of the accordion.
          */
         "size"?: IcSizes;
+        /**
+          * Sets the theme color to the dark or light theme color. "inherit" will set the color based on the system settings or ic-theme component.
+         */
+        "theme"?: IcThemeMode;
     }
     interface IcAccordionGroup {
         /**
           * The accessible button label to provide more context to the 'See all/Hide all' button for screen reader users.
          */
         "accessibleButtonLabel"?: string;
-        /**
-          * The appearance of the accordion group, e.g dark, or light.
-         */
-        "appearance"?: IcThemeForeground;
         /**
           * If `true`, the accordion will load in an expanded state.
          */
@@ -3325,6 +3327,10 @@ declare namespace LocalJSX {
           * The size of the accordion.
          */
         "size"?: IcSizes;
+        /**
+          * Sets the theme color to the dark or light theme color. "inherit" will set the color based on the system settings or ic-theme component.
+         */
+        "theme"?: IcThemeMode;
     }
     interface IcAlert {
         /**

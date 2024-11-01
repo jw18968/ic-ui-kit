@@ -116,7 +116,9 @@ export const DifferentSizesGroup = (): ReactElement => {
 export const DarkTheme = (): ReactElement => {
   return (
     <div style={{ backgroundColor: "black" }}>
-      <IcAccordion heading="Accordion 1" theme="dark">Text</IcAccordion>
+      <IcAccordion heading="Accordion 1" theme="dark">
+        Text
+      </IcAccordion>
     </div>
   );
 };

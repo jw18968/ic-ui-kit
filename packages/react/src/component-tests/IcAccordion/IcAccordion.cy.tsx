@@ -341,7 +341,7 @@ describe("Visual regression and a11y tests", () => {
 
       cy.checkA11yWithWait();
       cy.compareSnapshot({
-        name: "heading-body",
+        name: "dark-theme",
         testThreshold: setThresholdBasedOnEnv(0),
       });
     });

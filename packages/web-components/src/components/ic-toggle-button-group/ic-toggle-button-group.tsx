@@ -8,6 +8,7 @@ import {
   Event,
   EventEmitter,
   State,
+  Watch,
 } from "@stencil/core";
 import {
   IcSizes,
@@ -67,6 +68,12 @@ export class ToggleButtonGroup {
    * If `true`, the toggle button group will be in loading state.
    */
   @Prop() loading?: boolean = false;
+  @Watch("loading")
+  watchLoadingHandler(): void {
+    this.getAllToggleButtons().forEach((el) => {
+      el.loading = this.loading;
+    });
+  }
 
   /**
    * If `auto`, controls are toggled automatically when navigated to. If `manual`, the controls must be actioned to change their toggled state. The value of this prop is ignored if `selectType` is set to`multi`.

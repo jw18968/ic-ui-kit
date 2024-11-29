@@ -28,7 +28,7 @@
 
 :host(.expand-toggle-group-child) ::part(button) {
   width: 100%;
-  min-height: inherit;
+  min-height: var(--min-height, var(--ic-space-xl));
   white-space: inherit;
   height: inherit;
 }

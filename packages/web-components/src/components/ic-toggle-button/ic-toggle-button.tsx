@@ -94,6 +94,16 @@ export class ToggleButton {
     checked: boolean;
   }>;
 
+  componentWillUpdate(): void {
+    if (this.loading) {
+      const buttonEl = this.el.shadowRoot.querySelector('ic-button') as HTMLIcButtonElement;
+      buttonEl.style.setProperty(
+        "--min-height",
+        `${this.el.getBoundingClientRect().height}px`
+      );
+    }
+  }
+
   componentWillLoad(): void {
     removeDisabledFalse(this.disabled, this.el);
 

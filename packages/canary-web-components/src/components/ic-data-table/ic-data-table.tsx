@@ -1552,6 +1552,8 @@ export class DataTable {
       ? this.data.slice(this.fromRow, this.toRow)
       : this.data.slice();
 
+    const paginationOffset = this.showPagination ? this.fromRow : 0;
+
     /**
      * Ensures that createCells has a value in data to map over to actually render the slot.
      * Removes the need for the user to add it multiple times.
@@ -1562,7 +1564,10 @@ export class DataTable {
       const slottedColumns = this.columns
         .map(
           ({ key }, index) =>
-            isSlotUsed(this.el, `${key}-${rowIndex}`) && { key, index }
+            isSlotUsed(this.el, `${key}-${rowIndex + paginationOffset}`) && {
+              key,
+              index,
+            }
         )
         .filter(
           (col) =>
@@ -1587,7 +1592,7 @@ export class DataTable {
               ["table-row-selected"]: this.selectedRow === row,
             }}
           >
-            {this.createCells(row, index)}
+            {this.createCells(row, index + paginationOffset)}
           </tr>
         );
       });

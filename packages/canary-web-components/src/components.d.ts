@@ -5,15 +5,17 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IcAriaLive, IcCardDensity, IcDateFormat, IcDateValueFormat, IcDisableTimeSelection, IcInformationStatusOrEmpty, IcPaginationBarOptions, IcPositionTopOrRight, IcSizes, IcThemeMode, IcTimeFormat, IcWeekDays } from "./utils/types";
+import { IcAriaLive, IcCardDensity, IcDateFormat, IcDateValueFormat, IcDisableTimeSelection, IcInformationStatusOrEmpty, IcPaginationBarOptions, IcPositionTopOrRight, IcSizes, IcThemeMode, IcTimeFormat, IcTimeFormatSelector, IcWeekDays } from "./utils/types";
 import { IcDataTableColumnObject, IcDataTableDataType, IcDataTableDensityOptions, IcDataTableRowHeights, IcDataTableSortOrderOptions, IcDataTableTruncationTypes, IcDensityUpdateEventDetail, IcSortEventDetail } from "./components/ic-data-table/ic-data-table.types";
 import { IcPaginationAlignmentOptions, IcPaginationLabelTypes, IcPaginationTypes } from "@ukic/web-components/dist/types/components/ic-pagination/ic-pagination.types";
 import { IcItemsPerPageChangeEventDetail, IcPageChangeEventDetail } from "./components/ic-pagination-bar/ic-pagination-bar.types";
+import { IcTimePeriods } from "./components/ic-time-selector/ic-time-selector.types";
 import { IcTreeItemOptions } from "./components/ic-tree-view/ic-tree-view.types";
-export { IcAriaLive, IcCardDensity, IcDateFormat, IcDateValueFormat, IcDisableTimeSelection, IcInformationStatusOrEmpty, IcPaginationBarOptions, IcPositionTopOrRight, IcSizes, IcThemeMode, IcTimeFormat, IcWeekDays } from "./utils/types";
+export { IcAriaLive, IcCardDensity, IcDateFormat, IcDateValueFormat, IcDisableTimeSelection, IcInformationStatusOrEmpty, IcPaginationBarOptions, IcPositionTopOrRight, IcSizes, IcThemeMode, IcTimeFormat, IcTimeFormatSelector, IcWeekDays } from "./utils/types";
 export { IcDataTableColumnObject, IcDataTableDataType, IcDataTableDensityOptions, IcDataTableRowHeights, IcDataTableSortOrderOptions, IcDataTableTruncationTypes, IcDensityUpdateEventDetail, IcSortEventDetail } from "./components/ic-data-table/ic-data-table.types";
 export { IcPaginationAlignmentOptions, IcPaginationLabelTypes, IcPaginationTypes } from "@ukic/web-components/dist/types/components/ic-pagination/ic-pagination.types";
 export { IcItemsPerPageChangeEventDetail, IcPageChangeEventDetail } from "./components/ic-pagination-bar/ic-pagination-bar.types";
+export { IcTimePeriods } from "./components/ic-time-selector/ic-time-selector.types";
 export { IcTreeItemOptions } from "./components/ic-tree-view/ic-tree-view.types";
 export namespace Components {
     interface IcCalendar {
@@ -541,6 +543,10 @@ export namespace Components {
     }
     interface IcPaginationBar {
         /**
+          * The accessible label passed down to the pagination component to provide context for screen reader users.
+         */
+        "accessibleLabel"?: string;
+        /**
           * Sets the alignment of the items in the pagination bar.
          */
         "alignment"?: IcPaginationAlignmentOptions;
@@ -664,7 +670,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * If `true`, every individual input field completed will emit an icChange event.
+          * If `true`, every individual input field completed will emit an icTimeChange event.
          */
         "emitTimePartChange"?: boolean;
         /**
@@ -713,6 +719,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * If `true`, the time input will show an AM/PM toggle when in 12-hour time period.
+         */
+        "showAmPmToggle"?: boolean;
+        /**
           * If `true`, a button which clears the time input when clicked will be displayed.
          */
         "showClearButton"?: boolean;
@@ -733,7 +743,7 @@ export namespace Components {
           * The time period format: "12" for 12-hour, "24" for 24-hour. Defaults to "24".
          */
         "timePeriod": "12" | "24";
-        "triggerIcChange": (t: Date | null) => Promise<void>;
+        "triggerIcTimeChange": (t: Date | null) => Promise<void>;
         /**
           * The value of the `aria-live` attribute on the validation message.
          */
@@ -750,6 +760,40 @@ export namespace Components {
           * The value of the time input. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
          */
         "value"?: IcDateValueFormat;
+    }
+    interface IcTimeSelector {
+        /**
+          * An array of times that will be disabled in the time selector. The times can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "disableTimes": IcDisableTimeSelection[];
+        /**
+          * The latest time that will be allowed. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "max": string | Date;
+        /**
+          * The earliest time that will be allowed. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "min": string | Date;
+        /**
+          * The size of the time selector to be displayed.
+         */
+        "size": IcSizes;
+        /**
+          * Sets the theme color to the dark or light theme color. "inherit" will set the color based on the system settings or ic-theme component.
+         */
+        "theme"?: IcThemeMode;
+        /**
+          * The format in which the time will be displayed.
+         */
+        "timeFormat": IcTimeFormatSelector;
+        /**
+          * The time period format: "12" for 12-hour, "24" for 24-hour. Defaults to "24".
+         */
+        "timePeriod": "12" | "24";
+        /**
+          * The value of the time selector. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "value"?: string | Date | null | undefined;
     }
     interface IcTreeItem {
         /**
@@ -864,6 +908,10 @@ export interface IcPaginationBarCustomEvent<T> extends CustomEvent<T> {
 export interface IcTimeInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcTimeInputElement;
+}
+export interface IcTimeSelectorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcTimeSelectorElement;
 }
 export interface IcTreeItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1029,12 +1077,14 @@ declare global {
     interface HTMLIcTimeInputElementEventMap {
         "clockButtonClicked": { value: Date | null };
         "icBlur": { value: Date | null };
-        "icChange": {
+        "icTimeChange": {
     value: Date | null;
     timeObject: {
       hour: string | null;
       minute: string | null;
       second: string | null;
+      millisecond: string | null;
+      period: string | null;
     };
   };
         "icFocus": { value: Date | null };
@@ -1052,6 +1102,32 @@ declare global {
     var HTMLIcTimeInputElement: {
         prototype: HTMLIcTimeInputElement;
         new (): HTMLIcTimeInputElement;
+    };
+    interface HTMLIcTimeSelectorElementEventMap {
+        "icChange": {
+    value: Date | null;
+    timeString: string | null;
+    timeObject: {
+      hour: string | null;
+      minute: string | null;
+      second: string | null;
+      period?: IcTimePeriods;
+    };
+  };
+    }
+    interface HTMLIcTimeSelectorElement extends Components.IcTimeSelector, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIcTimeSelectorElementEventMap>(type: K, listener: (this: HTMLIcTimeSelectorElement, ev: IcTimeSelectorCustomEvent<HTMLIcTimeSelectorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIcTimeSelectorElementEventMap>(type: K, listener: (this: HTMLIcTimeSelectorElement, ev: IcTimeSelectorCustomEvent<HTMLIcTimeSelectorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIcTimeSelectorElement: {
+        prototype: HTMLIcTimeSelectorElement;
+        new (): HTMLIcTimeSelectorElement;
     };
     interface HTMLIcTreeItemElementEventMap {
         "icTreeItemSelected": { id: string };
@@ -1090,6 +1166,7 @@ declare global {
         "ic-pagination-bar": HTMLIcPaginationBarElement;
         "ic-table-of-contents": HTMLIcTableOfContentsElement;
         "ic-time-input": HTMLIcTimeInputElement;
+        "ic-time-selector": HTMLIcTimeSelectorElement;
         "ic-tree-item": HTMLIcTreeItemElement;
         "ic-tree-view": HTMLIcTreeViewElement;
     }
@@ -1694,6 +1771,10 @@ declare namespace LocalJSX {
     }
     interface IcPaginationBar {
         /**
+          * The accessible label passed down to the pagination component to provide context for screen reader users.
+         */
+        "accessibleLabel"?: string;
+        /**
           * Sets the alignment of the items in the pagination bar.
          */
         "alignment"?: IcPaginationAlignmentOptions;
@@ -1825,7 +1906,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * If `true`, every individual input field completed will emit an icChange event.
+          * If `true`, every individual input field completed will emit an icTimeChange event.
          */
         "emitTimePartChange"?: boolean;
         /**
@@ -1870,24 +1951,30 @@ declare namespace LocalJSX {
          */
         "onIcBlur"?: (event: IcTimeInputCustomEvent<{ value: Date | null }>) => void;
         /**
+          * Emitted when the input gains focus.
+         */
+        "onIcFocus"?: (event: IcTimeInputCustomEvent<{ value: Date | null }>) => void;
+        /**
           * Emitted when the value has changed.
          */
-        "onIcChange"?: (event: IcTimeInputCustomEvent<{
+        "onIcTimeChange"?: (event: IcTimeInputCustomEvent<{
     value: Date | null;
     timeObject: {
       hour: string | null;
       minute: string | null;
       second: string | null;
+      millisecond: string | null;
+      period: string | null;
     };
   }>) => void;
-        /**
-          * Emitted when the input gains focus.
-         */
-        "onIcFocus"?: (event: IcTimeInputCustomEvent<{ value: Date | null }>) => void;
         /**
           * If `true`, the input will require a value.
          */
         "required"?: boolean;
+        /**
+          * If `true`, the time input will show an AM/PM toggle when in 12-hour time period.
+         */
+        "showAmPmToggle"?: boolean;
         /**
           * If `true`, a button which clears the time input when clicked will be displayed.
          */
@@ -1925,6 +2012,53 @@ declare namespace LocalJSX {
           * The value of the time input. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
          */
         "value"?: IcDateValueFormat;
+    }
+    interface IcTimeSelector {
+        /**
+          * An array of times that will be disabled in the time selector. The times can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "disableTimes"?: IcDisableTimeSelection[];
+        /**
+          * The latest time that will be allowed. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "max"?: string | Date;
+        /**
+          * The earliest time that will be allowed. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "min"?: string | Date;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onIcChange"?: (event: IcTimeSelectorCustomEvent<{
+    value: Date | null;
+    timeString: string | null;
+    timeObject: {
+      hour: string | null;
+      minute: string | null;
+      second: string | null;
+      period?: IcTimePeriods;
+    };
+  }>) => void;
+        /**
+          * The size of the time selector to be displayed.
+         */
+        "size"?: IcSizes;
+        /**
+          * Sets the theme color to the dark or light theme color. "inherit" will set the color based on the system settings or ic-theme component.
+         */
+        "theme"?: IcThemeMode;
+        /**
+          * The format in which the time will be displayed.
+         */
+        "timeFormat"?: IcTimeFormatSelector;
+        /**
+          * The time period format: "12" for 12-hour, "24" for 24-hour. Defaults to "24".
+         */
+        "timePeriod"?: "12" | "24";
+        /**
+          * The value of the time selector. The value can be in any format supported as `timeFormat`, in ISO 8601 time string format (`HH:MM:SS`) or as a JavaScript `Date` object.
+         */
+        "value"?: string | Date | null | undefined;
     }
     interface IcTreeItem {
         /**
@@ -2027,6 +2161,7 @@ declare namespace LocalJSX {
         "ic-pagination-bar": IcPaginationBar;
         "ic-table-of-contents": IcTableOfContents;
         "ic-time-input": IcTimeInput;
+        "ic-time-selector": IcTimeSelector;
         "ic-tree-item": IcTreeItem;
         "ic-tree-view": IcTreeView;
     }
@@ -2044,6 +2179,7 @@ declare module "@stencil/core" {
             "ic-pagination-bar": LocalJSX.IcPaginationBar & JSXBase.HTMLAttributes<HTMLIcPaginationBarElement>;
             "ic-table-of-contents": LocalJSX.IcTableOfContents & JSXBase.HTMLAttributes<HTMLIcTableOfContentsElement>;
             "ic-time-input": LocalJSX.IcTimeInput & JSXBase.HTMLAttributes<HTMLIcTimeInputElement>;
+            "ic-time-selector": LocalJSX.IcTimeSelector & JSXBase.HTMLAttributes<HTMLIcTimeSelectorElement>;
             "ic-tree-item": LocalJSX.IcTreeItem & JSXBase.HTMLAttributes<HTMLIcTreeItemElement>;
             "ic-tree-view": LocalJSX.IcTreeView & JSXBase.HTMLAttributes<HTMLIcTreeViewElement>;
         }

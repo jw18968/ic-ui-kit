@@ -890,10 +890,9 @@ describe("IcPaginationBar visual regression and a11y tests", () => {
 
     cy.checkHydrated(PAGINATION_BAR);
 
-    cy.findShadowEl(PAGINATION_BAR, "ic-select")
-      .click()
-      .realPress("ArrowDown")
-      .realPress("ArrowDown");
+    cy.findShadowEl(PAGINATION_BAR, "ic-select").click();
+    cy.findShadowEl(PAGINATION_BAR, "ic-select").realPress("ArrowDown");
+    cy.findShadowEl(PAGINATION_BAR, "ic-select").realPress("ArrowDown");
 
     cy.checkA11yWithWait();
     cy.compareSnapshot({
@@ -907,13 +906,29 @@ describe("IcPaginationBar visual regression and a11y tests", () => {
 
     cy.checkHydrated(PAGINATION_BAR);
 
-    cy.findShadowEl(PAGINATION_BAR, "ic-select").click().realPress("ArrowDown");
+    cy.findShadowEl(PAGINATION_BAR, "ic-select").click();
+    cy.findShadowEl(PAGINATION_BAR, "ic-select").realPress("ArrowDown");
 
     cy.checkA11yWithWait();
     cy.compareSnapshot({
       name: "/selected-items-per-page-arrowdown-change",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD),
     });
+  });
+
+  it("should have no accessibility violations with more than one pagination bar on the page", () => {
+    mount(
+      <div style={{ margin: "16px" }}>
+        <PaginationBarItemsPerPage accessibleLabel="First pagination" />
+        <PaginationBarItemsPerPage
+          type="complex"
+          accessibleLabel="Second pagination"
+        />
+      </div>
+    );
+    cy.checkHydrated(PAGINATION_BAR);
+
+    cy.checkA11yWithWait();
   });
 });
 

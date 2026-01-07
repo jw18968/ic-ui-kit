@@ -1504,6 +1504,10 @@ export namespace Components {
     }
     interface IcPagination {
         /**
+          * The accessible label of the pagination component to provide context for screen reader users.
+         */
+        "accessibleLabel"?: string;
+        /**
           * The number of pages displayed adjacent to the current page when using 'complex' type pagination. Accepted values are 0, 1 & 2.
          */
         "adjacentPageCount"?: number;
@@ -2579,6 +2583,7 @@ export namespace Components {
           * Sets whether single or multiple options can be toggled. If `multi`, then the `selectMethod` is always `manual`.
          */
         "selectType": IcSelectTypes;
+        "setActiveToggle": (toggle: HTMLIcToggleButtonElement) => Promise<void>;
         /**
           * The size of the toggle buttons to be displayed. This does not affect the font size of the accessible label.
          */
@@ -5184,6 +5189,10 @@ declare namespace LocalJSX {
         "theme"?: IcThemeMode;
     }
     interface IcPagination {
+        /**
+          * The accessible label of the pagination component to provide context for screen reader users.
+         */
+        "accessibleLabel"?: string;
         /**
           * The number of pages displayed adjacent to the current page when using 'complex' type pagination. Accepted values are 0, 1 & 2.
          */
